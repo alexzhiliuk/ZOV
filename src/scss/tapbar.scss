@@ -1,0 +1,61 @@
+.tapbar {
+    @media screen and (min-width: $burgerBreakpoint) {
+        display: none;
+    }
+    position: fixed;
+    z-index: $headerLayer;
+    bottom: 14px;
+    left: 8px;
+    right: 8px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+
+    // .tapbar__item
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 54px;
+        aspect-ratio: 1;
+
+        &_active {
+            .tapbar__icon {
+                img {
+                    filter: invert(60%) sepia(24%) saturate(942%) hue-rotate(117deg) brightness(92%) contrast(90%);
+                    -webkit-filter: invert(60%) sepia(24%) saturate(942%) hue-rotate(117deg) brightness(92%) contrast(90%);
+                }
+            }
+            .tapbar__caption {
+                color: #39AC94;
+            }
+        }
+    }
+
+    // .tapbar__icon
+    &__icon {
+        width: 26px;
+
+        img {
+            width: 100%;
+            aspect-ratio: 1;
+            display: block;
+        }
+    }
+
+    // .tapbar__caption
+    &__caption {
+        font-size: 8px;
+        line-height: 1.125;
+        color: #191919;
+    }
+}

@@ -1,0 +1,203 @@
+.hero {
+
+    display: flex;
+    gap: 10px;
+
+    @media screen and (max-width: $breakpoint1440) {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    // .hero__main-banner
+    &__main-banner {
+        flex: 0 0 calc(72% - 5px);
+
+        @media screen and (max-width: $breakpoint1440) {
+            flex: unset;
+        }
+    }
+
+    // .hero__banners
+    &__banners {
+        flex: 0 1 calc(28% - 5px);
+        display: flex;
+
+        @media screen and (max-width: $breakpoint1440) {
+            flex: unset;
+            width: 100%;
+        }
+        @media screen and (max-width: $breakpoint1024) {
+            overflow-x: auto;
+            margin: 0 calc(-1 * $containerPadding);
+            padding: 0 $containerPadding;
+            width: 100vw;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            scrollbar-width: none;
+
+        }
+        
+        &-wrapper {
+            
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            @media screen and (max-width: $breakpoint1440) {
+                flex-direction: row;
+                width: max-content;
+            }
+
+            & > * {
+                flex: 1 1;
+
+                @media screen and (max-width: $breakpoint1024) {
+                    flex: 1 0 210px;
+                    min-width: min(58vw, 400px);
+                }
+            }
+        }
+    }
+}
+
+.main-banner {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+
+    padding: 80px 0;
+
+    @media screen and (max-width: $burgerBreakpoint) {
+        border-radius: 0;
+        margin: 0 calc(-1 * $containerPadding);
+        min-height: min(115vw, 600px);
+        padding-bottom: 30px;
+        padding-right: 20px;
+        padding-left: 20px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 0; right: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+            z-index: -1;
+        }
+    }
+
+    // .main-banner__img
+    &__img {
+        position: absolute;
+        top: 0;        
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+        
+    }
+
+    // .main-banner__tags
+    &__tags {
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: none;
+        }
+    }
+
+    // .main-banner__tag
+    &__tag {
+        height: 46px;
+
+        img {
+            height: 100%;
+            display: block;
+        }
+    }
+
+    // .main-banner__title
+    &__title {
+        font-size: clamp(24px, 4.5vw, 44px);
+        line-height: 1.135;
+        font-weight: 700;
+        color: var(--color);
+
+        max-width: 590px;
+        margin-bottom: clamp(10px, 2.5vw, 24px);
+
+        span {
+            color: var(--highlight);
+        }
+    }
+
+    // .main-banner__subtitle
+    &__subtitle {
+        font-size: clamp(14px, 3vw, 32px);
+        line-height: 1.25;
+        color: var(--color);
+
+        max-width: 590px;
+        margin-bottom: 24px;
+
+        span {
+            color: var(--highlight);
+        }
+    }
+
+    // .main-banner__btn
+    &__btn {
+        margin-top: auto;
+    }
+}
+
+.banner {
+
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg);
+    min-height: clamp(130px, 19vw, 192px);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: clamp(12px, 3vw, 30px);
+
+    // .banner__title
+    &__title {
+        color: var(--color);
+        font-size: clamp(13px, 2vw, 22px);
+        line-height: 1.25;
+        font-weight: 700;
+
+        span {
+            color: var(--highlight);
+        }
+    }
+
+    // .banner__img
+    &__img {
+        flex: 0 0 39%;
+        height: 100%;
+
+        @media screen and (max-width: $breakpoint1024) {
+            flex: 0 0 50%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+}

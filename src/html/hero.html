@@ -1,0 +1,93 @@
+<section class="hero container container_wide">
+    <div class="hero__main-banner main-banner" style="--color: #FFF; --highlight: #FFBB80;">
+        <img class="main-banner__img" src="@img/hero/main-banner.png" alt="">
+        <div class="main-banner__tags">
+            <div class="main-banner__tag">
+                <img src="@img/hero/tag-1.png" alt="">
+            </div>
+            <div class="main-banner__tag">
+                <img src="@img/hero/tag-2.png" alt="">
+            </div>
+        </div>
+        <h2 class="main-banner__title">
+            Коллекция Аврора в наличии <br> <span>со скидкой 10%</span>
+        </h2>
+        <p class="main-banner__subtitle">
+            Только до конца недели!
+        </p>
+        <a href="" class="main-banner__btn btn">
+            узнать цену
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 10H19M19 10L15.246 6M19 10L15.246 14" stroke="white" stroke-linecap="round"/>
+            </svg>                
+        </a>
+    </div>
+    <div class="hero__banners">
+        <div class="hero__banners-wrapper">
+            <a class="banner" style="--bg: #C09564; --color: #FFF;">
+                <h3 class="banner__title">
+                    Скидка 10%
+                    на новые шкафы Магнус
+                </h3>
+                <div class="banner__img">
+                    <img src="@img/hero/banner-1.png" alt="">
+                </div>
+            </a>
+            <a class="banner" style="--bg: #747D8E; --color: #FFF;">
+                <h3 class="banner__title">
+                    Скидка 10%
+                    на комод Леонардо
+                </h3>
+                <div class="banner__img">
+                    <img src="@img/hero/banner-2.png" alt="">
+                </div>
+            </a>
+            <a class="banner" style="--bg: #414141; --color: #FFF; --highlight: #FFBC70;">
+                <h3 class="banner__title">
+                    <span>Черная пятница.</span> Грандиозные скидки на мебель
+                    от фабрики «ЗОВ»
+                </h3>
+                <div class="banner__img">
+                    <img src="@img/hero/banner-3.png" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    function setMainTopPadding() {
+        let mainPadding, bannerPadding
+        if ($(window).innerWidth() > 1024) {
+            mainPadding = $(".header").outerHeight() + 20 + $(".header__row_out").outerHeight() + 28;
+        } else {
+            mainPadding = 0
+            bannerPadding = $(".header").outerHeight() + 35
+        }
+
+        $("main").css("padding-top", `${mainPadding}px`);
+        bannerPadding ? $(".main-banner").css("padding-top", `${bannerPadding}px`) : $(".main-banner").css("padding-top", '')
+    }
+    setMainTopPadding()
+
+    function setMainBannerLeftPadding() {
+        let leftPos = $(".main-banner").offset().left;
+
+        if (leftPos > 20) {
+            $(".main-banner").css("padding-left", "60px");
+        } else {
+            let windowWidth = $(window).innerWidth(),
+                padding = (60 - (1880 - windowWidth) / 2)
+
+            padding = padding < 20 ? 20 : padding
+
+            $(".main-banner").css("padding-left", `${padding}px`);
+        }
+    }
+    setMainBannerLeftPadding()
+
+    $(window).resize(function() {
+        setMainTopPadding()
+        setMainBannerLeftPadding()
+    })
+</script>
