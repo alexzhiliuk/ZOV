@@ -56,19 +56,6 @@
 </section>
 
 <script>
-    function setMainTopPadding() {
-        let mainPadding, bannerPadding
-        if ($(window).innerWidth() > 1024) {
-            mainPadding = $(".header").outerHeight() + 20 + $(".header__row_out").outerHeight() + 28;
-        } else {
-            mainPadding = 0
-            bannerPadding = $(".header").outerHeight() + 35
-        }
-
-        $("main").css("padding-top", `${mainPadding}px`);
-        bannerPadding ? $(".main-banner").css("padding-top", `${bannerPadding}px`) : $(".main-banner").css("padding-top", '')
-    }
-    setMainTopPadding()
 
     function setMainBannerLeftPadding() {
         let leftPos = $(".main-banner").offset().left;
@@ -87,7 +74,6 @@
     setMainBannerLeftPadding()
 
     $(window).resize(function() {
-        setMainTopPadding()
         setMainBannerLeftPadding()
     })
 </script>
