@@ -31,6 +31,7 @@ body {
     overflow-x: clip;
     scroll-behavior: smooth;
     font-family: $fontPrimary;
+    font-style: normal;
     color: $colorBlack;
 }
 
@@ -38,7 +39,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #F4F2F1;
+    background: $colorBackground;
     padding-bottom: 100px;
 
 }
@@ -108,15 +109,228 @@ button {
     border-radius: 4px;
     background: var(--bg, #F0A462);
     color: var(--color, #FFF);
-    padding: clamp(8px, 1.6vw, 16px) clamp(16px, 3.2vw, 32px);
+    padding: 1em clamp(16px, 3.2vw, 32px);
     max-width: fit-content;
 
-    font-size: clamp(10px, 1.7vw, 17px);
+    font-size: clamp(14px, 1.7vw, 17px);
     line-height: 1.2;
     text-transform: uppercase;
     font-weight: 700;
 
+    &_black {
+        background: #363636;
+    }
+
+    &_green {
+        background: #40BFA5;
+    }
+
 }
+
+.input {
+    padding: 16px 20px;
+    background: #FAFAFA;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    display: flex;
+    
+    font-weight: 400;
+    font-size: clamp(14px, 1.6vw, 16px);
+    line-height: 1.5;
+    color: $colorText;
+
+    &::placeholder {
+        color: rgba($color: $colorText, $alpha: .5);
+    }
+}
+textarea {
+    resize: none;
+    height: clamp(110px, 15vw, 150px);
+}
+
+.input-with-btn {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    // .input-with-btn__input
+    &__input {
+        flex: 1 1 60%;
+    }
+
+    // .input-with-btn__btn
+    &__btn {
+        flex: 1 1 fit-content;
+        max-width: unset;
+    }
+}
+
+.calc-field {
+
+    @extend .input;
+    background: #C8EAE3;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    // .calc-field__title
+    &__title {
+    }
+
+    // .calc-field__value
+    &__value {
+    }
+}
+
+
+@mixin radioFont {
+    font-weight: 300;
+    font-size: clamp(14px, 1.6vw, 16px);
+    line-height: 1.5;
+    color: $colorText;
+}
+
+.confirm-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    
+    @include radioFont;
+
+    cursor: pointer;
+
+    input {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+
+        -webkit-appearance: none;
+        appearance: none;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        background: #FAFAFA;
+        
+        cursor: pointer;
+        position: relative;
+        
+        &:checked {
+
+            &::after {
+                content: url(../img/cart/confirm.svg);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                translate: -50% -50%;
+            }
+        }
+    }
+
+}
+
+.radio {
+
+    @include radioFont;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    cursor: pointer;
+
+    input {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+
+        -webkit-appearance: none;
+        appearance: none;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        background: #FAFAFA;
+        border-radius: 50%;
+        
+        cursor: pointer;
+        position: relative;
+        
+        &:checked {
+
+            &::after {
+                content: '';
+                position: absolute;
+                border-radius: 50%;
+                width: 40%;
+                aspect-ratio: 1;
+                left: 50%;
+                top: 50%;
+                translate: -50% -50%;
+                background: $colorText;
+            }
+        }
+    }
+
+}
+
+.radio-cards {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 4px;
+    column-gap: 8px;
+
+    & > * {
+        flex: 0 0 calc(50% - 8px / 2);
+
+        @media screen and (max-width: $breakpoint576) {
+            flex: 0 0 100%;
+        }
+    }
+}
+
+.radio-card {
+
+    position: relative;
+    cursor: pointer;
+
+    background: $colorWhite;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 16px;
+
+    font-size: 12px;
+    line-height: 1.33;
+    color: $colorText;
+
+    &_checked {
+        background: #D9F2ED;
+        border-color: #40BFA5;
+    }
+
+    input {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    // .radio-card__title
+    &__title {
+        font-weight: 500;
+    }
+
+    // .radio-card__caption
+    &__caption {
+        text-align: right;
+        font-weight: 300;
+        text-wrap: nowrap;
+    }
+}
+
+
 
 .page-title {
 

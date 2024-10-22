@@ -11,6 +11,8 @@
     row-gap: .5em;
     flex-wrap: wrap;
 
+    margin-bottom: clamp(20px, 4vw, 40px);
+
     // .breadcrumbs__item
     &__item {
         &:last-of-type {

@@ -11,20 +11,20 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241019145926" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241022180115" rel="stylesheet">
     
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20241019145926">
+    <link rel="stylesheet" href="css/style.min.css?_v=20241022180115">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241019145926"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241022180115"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241019145926"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241019145926"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241022180115"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241022180115"></script>
 
     <title>Корзина</title>
 </head>
@@ -825,14 +825,14 @@ function navigationResize() {
         </div>
         <h2 class="popup__title">Получить дополнительную информацию</h2>
         <div class="popup__inputs">
-            <input class="popup__input" type="text" placeholder="Ваше имя" required>
-            <input class="popup__input" type="email" placeholder="E-mail" required>
-            <label class="popup__confirm">
+            <input class="popup__input input" type="text" placeholder="Ваше имя" required>
+            <input class="popup__input input" type="email" placeholder="E-mail" required>
+            <label class="popup__confirm confirm-checkbox">
                 <input type="checkbox">
                 Я готов на обработку персональных данных
             </label>
         </div>
-        <button type="submit" class="btn popup__btn">Оставить заявку</button>
+        <button type="submit" class="btn btn_green popup__btn">Оставить заявку</button>
     </form>
 </section>
 
@@ -842,8 +842,600 @@ function navigationResize() {
     /
     <a href="javascript:void(0)" class="breadcrumbs__item">Корзина</a>
 </section>
+            <section class="cart-section container">
+    <div class="cart-section__mobile-header">
+        <h1 class="cart-section__title">Корзина</h1>
+        <div class="products-count">4 товара</div>
+    </div>
+    <div class="cart-section__order">
+        <h1 class="tile cart-section__title">оформление заказа</h1>
+        <form class="order-form-section">
+            <div class="order-form order-form_desktop tile">
+                <h2 class="order-form__title">Регистрация</h2>
+                <p class="order-form__subtitle">
+                    Уже зарегистрированы? <a href=""><strong>Войдите в аккаунт.</strong></a>
+                </p>
+                <div class="order-form__inputs">
+                    <input type="text" class="input" placeholder="Имя и фамилия *" required>
+                    <input type="email" class="input" placeholder="Ваш E-mail *" required>
+                    <input type="tel" class="input" placeholder="Номер телефона *" required>
+
+                    <label class="confirm-checkbox">
+                        <input type="checkbox">
+                        Создать аккаунт и присоединиться к ZOV Online, чтобы получать персональные предложения и скидки.
+                    </label>
+                </div>
+            </div>
+            <div class="order-form tile">
+                <h2 class="order-form__title">Выберите способ доставки</h2>
+                <div class="order-form__inputs">
+                    <label class="radio">
+                        <input type="radio" name="delivery" value="1" checked data-check-toggle="courier-form">
+                        <p>Курьерской службой по Беларуси</p>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="delivery" value="2" data-check-toggle="courier-city-form">
+                        <p>Курьерская доставка по Гродно <strong>— бесплатно</strong></p>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="delivery" value="3">
+                        <p>Самовывоз (г. Гродно, ул. Дзержинского, 110) <strong>— бесплатно</strong></p>
+                    </label>
+                </div>
+                <div class="order-form__inputs" id="courier-city-form" style="display: none;">
+                    <input type="text" class="input" placeholder="Город / населенный пункт" required>
+                    <input type="text" class="input" placeholder="Улица, номер дома и квартиры *" required>
+                </div>
+                <div class="order-form__inputs" id="courier-form" style="display: none;">
+                    <input type="text" class="input" placeholder="Город / населенный пункт" required>
+                    <input type="text" class="input" placeholder="Улица, номер дома и квартиры *" required>
+                    <div class="calc-field">
+                        <div class="calc-field__title">Экспресс-доставка грузов</div>
+                        <div class="calc-field__value">20 BYN</div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-form order-form_tabs tile">
+                <div class="order-form__header">
+                    <div class="order-form__tab order-form__tab_active" data-form-tab-id="1">Оплатить заказ сейчас</div>
+                    <div class="order-form__tab" data-form-tab-id="2">Оплатить заказ после связи с менеджером</div>
+                </div>
+                <div class="order-form__body" data-form-body-id="1" style="display: none;">
+                    <div class="order-form__inputs">
+                        <label class="radio">
+                            <input type="radio" name="payment-type" value="1" checked>
+                            Онлайн-оплата банковской картой (система WEBPAY)
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="payment-type" value="2">
+                            Система «Расчет» (ЕРИП)
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="payment-type" value="3">
+                            Кредит «На родныя тавары» под 4% годовых
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="payment-type" value="4" data-check-toggle="installment">
+                            Онлайн-оплата картой рассрочки
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="payment-type" value="5" data-check-toggle="for-company">
+                            Оплата по банковским реквизитам (для юридических лиц / ИП)
+                        </label>
+                    </div>
+                    <div class="radio-cards" id="installment">
+                        <label class="radio-card">
+                            <input type="radio" name="installment-type" value="2" checked>
+                            <div class="radio-card__title">
+                                «Халва» от ЗАO «МТБанк»
+                            </div>
+                            <div class="radio-card__caption">
+                                2 месяца
+                            </div>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="installment-type" value="3">
+                            <div class="radio-card__title">
+                                «КартаFUN» от ОАО «БПС‑Сбербанк»
+                            </div>
+                            <div class="radio-card__caption">
+                                3 месяца
+                            </div>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="installment-type" value="4">
+                            <div class="radio-card__title">
+                                «КартаFUN» от ОАО «БПС‑Сбербанк»
+                            </div>
+                            <div class="radio-card__caption">
+                                2 месяца
+                            </div>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="installment-type" value="5">
+                            <div class="radio-card__title">
+                                «Карта с большими бонусами» от ОАО «БПС-Сбербанк»
+                            </div>
+                            <div class="radio-card__caption">
+                                money-back 1%
+                            </div>
+                        </label>
+                    </div>
+                    <div id="for-company">
+                        <div class="order-form__inputs order-form__inputs_col_2">
+                            <input type="text" class="input" placeholder="Наименование юр. лица / ИП*" required>
+                            <input type="text" class="input" placeholder="Номер расчетного счета (IBAN)*" required>
+                            <input type="text" class="input" placeholder="УНП*" required>
+                            <input type="text" class="input" placeholder="Наименование и адрес банка*" required>
+                            <input type="text" class="input" placeholder="Юридический адрес*" required>
+                            <input type="text" class="input" placeholder="БИК (SWIFT)*" required>
+                            <input type="text" class="input" placeholder="Почтовый адрес" required>
+                            <input type="text" class="input" placeholder="ФИО подписывающего документ*" required>
+                            <input type="email" class="input" placeholder="Адрес электронной почты*" required>
+                            <input type="text" class="input" placeholder="Должность подписывающего документ*" required>
+                            <input type="text" class="input" placeholder="Номер телефона*" required>
+                            <input type="text" class="input" placeholder="Основание (документ)*" required>
+                        </div>
+                        <label class="confirm-checkbox">
+                            <input type="checkbox" data-check-toggle="individual">
+                            Оплата физическим лицом за юридическое лицо
+                        </label>
+                        <div class="order-form__inputs order-form__inputs_col_2" id="individual">
+                            <input type="text" class="input" placeholder="Фамилия*" required>
+                            <input type="text" class="input" placeholder="Серия и номер документа*" required>
+                            <input type="text" class="input" placeholder="Имя*" required>
+                            <input type="text" class="input" placeholder="Дата выдачи и наименование органа*" required>
+                            <input type="text" class="input" placeholder="Отчество*" required>
+                            <input type="text" class="input" placeholder="Идентификационный номер*" required>
+                            <input type="text" class="input" placeholder="Дата рождения (ДД.ММ.ГГГГ)*" required>
+                            <input type="text" class="input" placeholder="Адрес электронной почты*" required>
+                            <input type="text" class="input" placeholder="Номер телефона с кодом*" required>
+                        </div>
+                    </div>
+                    <div class="order-form__inputs order-form__inputs_w_100">
+                        <textarea class="input" placeholder="Комментарий к заказу"></textarea>
+                    </div>
+                    <div class="order-form__inputs">
+                        <label class="confirm-checkbox">
+                            <input type="checkbox">
+                            <p>
+                                Я ознакомился с <a href="#"><strong>Договором публичной оферты</strong></a>, <a href="#"><strong>Политикой в отношении конфиденциальных данных</strong></a>, <a href="#"><strong>Пользовательским соглашением</strong></a> и принимаю условия.
+                            </p>
+                        </label>
+                    </div>
+                    <button class="order-form__submit btn btn_green">отправить заказ</button>
+                </div>
+                <div class="order-form__body" data-form-body-id="2">
+                    <div class="order-form__label">Выберите предпочтительный способ связи</div>
+                    <div class="order-form__inputs">
+                        <label class="radio">
+                            <input type="radio" name="connect" value="1" checked>
+                            Телефонный звонок
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="connect" value="2">
+                            Viber
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="connect" value="3">
+                            Telegram
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="connect" value="3">
+                            WhatsApp
+                        </label>
+                    </div>
+                    <div class="order-form__inputs">
+                        <input type="tel" class="input" placeholder="Номер телефона с кодом*" required>
+                        <input type="text" class="input" placeholder="Пожалуйста, укажите удобное время для связи" required>
+
+                        <label class="confirm-checkbox">
+                            <input type="checkbox">
+                            Я согласен(-на) с Политикой в отношении обработки персональных данных и Пользовательским соглашением.*
+                        </label>
+                    </div>
+                    <button class="order-form__submit btn btn_green">отправить заказ</button>
+                </div>
+            </div>
+            <div class="order-form order-form_mobile tile">
+                <h2 class="order-form__title">способ оплаты</h2>
+                
+                <div class="order-form__inputs">
+                    <label class="radio">
+                        <input type="radio" name="payment-type" value="1" checked data-check-any-toggle="when-order-payment-mobile">
+                        Онлайн-оплата банковской картой (система WEBPAY)
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="payment-type" value="2" data-check-any-toggle="when-order-payment-mobile">
+                        Система «Расчет» (ЕРИП)
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="payment-type" value="3">
+                        Кредит «На родныя тавары» под 4% годовых
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="payment-type" value="4" data-check-toggle="installment-mobile" data-check-any-toggle="when-order-payment-mobile">
+                        Онлайн-оплата картой рассрочки
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="payment-type" value="5" data-check-toggle="for-company-mobile">
+                        Оплата по банковским реквизитам (для юридических лиц / ИП)
+                    </label>
+                </div>
+                <div class="radio-cards" id="installment-mobile">
+                    <label class="radio-card">
+                        <input type="radio" name="installment-type" value="2" checked>
+                        <div class="radio-card__title">
+                            «Халва» от ЗАO «МТБанк»
+                        </div>
+                        <div class="radio-card__caption">
+                            2 месяца
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="installment-type" value="3">
+                        <div class="radio-card__title">
+                            «КартаFUN» от ОАО «БПС‑Сбербанк»
+                        </div>
+                        <div class="radio-card__caption">
+                            3 месяца
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="installment-type" value="4">
+                        <div class="radio-card__title">
+                            «КартаFUN» от ОАО «БПС‑Сбербанк»
+                        </div>
+                        <div class="radio-card__caption">
+                            2 месяца
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="installment-type" value="5">
+                        <div class="radio-card__title">
+                            «Карта с большими бонусами» от ОАО «БПС-Сбербанк»
+                        </div>
+                        <div class="radio-card__caption">
+                            money-back 1%
+                        </div>
+                    </label>
+                </div>
+                <div id="for-company-mobile">
+                    <div class="order-form__inputs order-form__inputs_col_2">
+                        <input type="text" class="input" placeholder="Наименование юр. лица / ИП*" required>
+                        <input type="text" class="input" placeholder="Номер расчетного счета (IBAN)*" required>
+                        <input type="text" class="input" placeholder="УНП*" required>
+                        <input type="text" class="input" placeholder="Наименование и адрес банка*" required>
+                        <input type="text" class="input" placeholder="Юридический адрес*" required>
+                        <input type="text" class="input" placeholder="БИК (SWIFT)*" required>
+                        <input type="text" class="input" placeholder="Почтовый адрес" required>
+                        <input type="text" class="input" placeholder="ФИО подписывающего документ*" required>
+                        <input type="email" class="input" placeholder="Адрес электронной почты*" required>
+                        <input type="text" class="input" placeholder="Должность подписывающего документ*" required>
+                        <input type="text" class="input" placeholder="Номер телефона*" required>
+                        <input type="text" class="input" placeholder="Основание (документ)*" required>
+                    </div>
+                    <label class="confirm-checkbox">
+                        <input type="checkbox" data-check-toggle="individual-mobile">
+                        Оплата физическим лицом за юридическое лицо
+                    </label>
+                    <div class="order-form__inputs order-form__inputs_col_2" id="individual-mobile">
+                        <input type="text" class="input" placeholder="Фамилия*" required>
+                        <input type="text" class="input" placeholder="Серия и номер документа*" required>
+                        <input type="text" class="input" placeholder="Имя*" required>
+                        <input type="text" class="input" placeholder="Дата выдачи и наименование органа*" required>
+                        <input type="text" class="input" placeholder="Отчество*" required>
+                        <input type="text" class="input" placeholder="Идентификационный номер*" required>
+                        <input type="text" class="input" placeholder="Дата рождения (ДД.ММ.ГГГГ)*" required>
+                        <input type="text" class="input" placeholder="Адрес электронной почты*" required>
+                        <input type="text" class="input" placeholder="Номер телефона с кодом*" required>
+                    </div>
+                </div>
+                <div class="order-form__inputs order-form__inputs_w_100">
+                    <textarea class="input" placeholder="Комментарий к заказу"></textarea>
+                </div>
+                
+
+            </div>
+        </form>
+    </div>
+    <div class="cart-section__cart">
+        <div class="cart tile">
+            <h2 class="cart__title">товары в корзине</h2>
+            <div class="cart__products">
+                <div class="cart-product">
+                    <div class="cart-product__img catalog-card">
+                        <div class="catalog-card__img">
+                            <img src="img/cart/product.png" alt="">
+                        </div>
+                    </div>
+                    <div class="cart-product__info">
+                        <div class="cart-product__title">Шкаф Магнус-900-7-1</div>
+                        <p class="cart-product__desc">(цвет Ярко-серый, ширина 900 мм)</p>
+                    </div>
+                    <div class="cart-product__remove cart-product__remove_mobile">
+                        <img src="img/cart/Trash.svg" alt="">
+                    </div>
+                    <div class="cart-product__price">
+                        <div class="cart-product__final-price">3 790 BYN</div>
+                        <p class="cart-product__init-price">4 690 BYN</p>
+                    </div>
+                    <div class="cart-product__remove">
+                        Удалить
+                    </div>
+                    <div class="cart-product__counter counter" data-counter-min="1" data-counter-max="10">
+                        
+                        <button onclick="this.nextElementSibling.stepDown()" class="counter__minus" type="button">
+                            <img src="img/cart/minus.svg" alt="">
+                        </button>
+                        <input class="counter__value" value="1" type="number" min="1" max="10" onKeyDown="return false" />
+                        <button onclick="this.previousElementSibling.stepUp()" class="counter__plus" type="button">
+                            <img src="img/cart/plus.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="cart-product">
+                    <div class="cart-product__img catalog-card">
+                        <div class="catalog-card__img">
+                            <img src="img/cart/product.png" alt="">
+                        </div>
+                    </div>
+                    <div class="cart-product__info">
+                        <div class="cart-product__title">Шкаф Магнус-900-7-1</div>
+                        <p class="cart-product__desc">(цвет Ярко-серый, ширина 900 мм)</p>
+                    </div>
+                    <div class="cart-product__price">
+                        <div class="cart-product__final-price">3 790 BYN</div>
+                        <p class="cart-product__init-price">4 690 BYN</p>
+                    </div>
+                    <div class="cart-product__remove">
+                        Удалить
+                    </div>
+                    <div class="cart-product__remove cart-product__remove_mobile">
+                        <img src="img/cart/Trash.svg" alt="">
+                    </div>
+                    <div class="cart-product__counter counter" data-counter-min="1" data-counter-max="10">
+                        
+                        <button onclick="this.nextElementSibling.stepDown()" class="counter__minus" type="button">
+                            <img src="img/cart/minus.svg" alt="">
+                        </button>
+                        <input class="counter__value" value="1" type="number" min="1" max="10" onKeyDown="return false" />
+                        <button onclick="this.previousElementSibling.stepUp()" class="counter__plus" type="button">
+                            <img src="img/cart/plus.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart__promocode input-with-btn">
+                <input type="text" class="input input-with-btn__input" placeholder="Введите промокод">
+                <button class="btn btn_black input-with-btn__btn">Применить</button>
+            </div>
+            <table class="cart__summary cart-summary">
+                <tr>
+                    <td>Товаров на сумму</td>
+                    <td>1 360 BYN</td>
+                </tr>
+                <tr class="cart-summary__highlight">
+                    <td>Скидка</td>
+                    <td>100 BYN</td>
+                </tr>
+                <tr>
+                    <td>Доставка</td>
+                    <td>500 BYN</td>
+                </tr>
+                <tr class="cart-summary__highlight">
+                    <td>Вы экономите</td>
+                    <td>100 BYN</td>
+                </tr>
+            </table>
+            <hr>
+            <div class="cart__total">
+                Итого на сумму
+                <span class="cart__total-value">6 280 BYN</span>
+            </div>
+        </div>
+        <div class="useful-info tile">
+            <div class="useful-info__title">
+                Полезная информация
+            </div>
+            <ul class="useful-info__list">
+                <li>
+                    <a href="#">Договор публичной оферты</a>
+                </li>
+                <li>
+                    <a href="#">Способы оплаты</a>
+                </li>
+                <li>
+                    <a href="#">Условия доставки</a>
+                </li>
+                <li>
+                    <a href="#">Гарантия</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="cart-footer">
+        <div class="order-form order-form_mobile" id="when-order-payment-mobile">
+            <h2 class="order-form__title">когда вы желаете оплатить заказ?</h2>
+            <div class="radio-cards">
+                <label class="radio-card radio-card_checked">
+                    <input type="radio" name="when-order-payment" value="2" checked>
+                    <div class="radio-card__title">
+                        Сразу
+                    </div>
+                </label>
+                <label class="radio-card">
+                    <input type="radio" name="when-order-payment" value="3" data-check-toggle="manager-connect-mobile">
+                    <div class="radio-card__title">
+                        После связи с менеджером
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="cart-footer__promocode input-with-btn">
+            <input type="text" class="input input-with-btn__input" placeholder="Введите промокод">
+            <button class="btn btn_black input-with-btn__btn">Применить</button>
+        </div>
+        <table class="cart-footer__summary cart-summary">
+            <tr>
+                <td>Товаров на сумму</td>
+                <td>1 360 BYN</td>
+            </tr>
+            <tr class="cart-summary__highlight">
+                <td>Скидка</td>
+                <td>100 BYN</td>
+            </tr>
+            <tr>
+                <td>Доставка</td>
+                <td>500 BYN</td>
+            </tr>
+            <tr class="cart-summary__highlight">
+                <td>Вы экономите</td>
+                <td>100 BYN</td>
+            </tr>
+        </table>
+        <div class="cart-footer__total">
+            Итого на сумму
+            <span class="cart-footer__total-value">6 280 BYN</span>
+        </div>
+        <div class="order-form order-form_mobile tile" id="manager-connect-mobile">
+            <div class="order-form__label">Как с вами связаться?</div>
+            <div class="order-form__inputs">
+                <label class="radio">
+                    <input type="radio" name="connect" value="1" checked>
+                    Телефонный звонок
+                </label>
+                <label class="radio">
+                    <input type="radio" name="connect" value="2">
+                    Viber
+                </label>
+                <label class="radio">
+                    <input type="radio" name="connect" value="3">
+                    Telegram
+                </label>
+                <label class="radio">
+                    <input type="radio" name="connect" value="3">
+                    WhatsApp
+                </label>
+            </div>
+            <div class="order-form__inputs">
+                <input type="tel" class="input" placeholder="Номер телефона с кодом*" required>
+                <input type="text" class="input" placeholder="Пожалуйста, укажите удобное время для связи" required>
+            </div>
+                
+        </div>
+        <div class="order-form order-form_mobile" id="mobile-footer-acceptance" style="display: none;">
+            <div class="order-form__inputs">
+                <label class="confirm-checkbox">
+                    <input type="checkbox">
+                    <p>
+                        Я ознакомился с <a href="#"><strong>Договором публичной оферты</strong></a>, <a href="#"><strong>Политикой в отношении конфиденциальных данных</strong></a>, <a href="#"><strong>Пользовательским соглашением</strong></a> и принимаю условия.
+                    </p>
+                </label>
+            </div>
+        </div>
+        <button class="cart-footer__btn btn btn_green" data-submit-btn-state="to-registration">перейти к оформлению</button>
+    </div>
+</section>
+
+<script>
+    $(".cart-product__remove").click(function() {
+        $(this).parents(".cart-product").remove()
+    })
+</script>
+
+<script>
+    function toggleItems(i, el) {
+        let toggleItemId = $(this).attr("data-check-toggle")
+        if ($(el).is(":checked")) {
+            $(`#${toggleItemId}`).show()
+        } else {
+            $(`#${toggleItemId}`).hide()
+        }
+    }
+    $("[data-check-toggle]").each(toggleItems)
+
+    function toggleAnyItems() {
+        let toggleItems = []
+        $("[data-check-any-toggle]").each(function() {
+            let toggleItemId = $(this).attr("data-check-any-toggle")
+            toggleItems.push(toggleItemId)
+        })
+        toggleItems = new Set(toggleItems)
+        
+        for (let toggleItem of toggleItems) {
+            if ($(`[data-check-any-toggle='${toggleItem}']:checked`).length != 0 && $("[data-check-any-toggle]").is(":visible")) {
+                $(`#${toggleItem}`).show()
+            } else {
+                $(`#${toggleItem}`).hide()
+            }
+        }
+    }
+    toggleAnyItems()
+
+    $("[type='radio'], [type='checkbox']").change(function() {
+        $("[data-check-toggle]").each(toggleItems)
+        toggleAnyItems()
+    })
+
+    $(".cart-footer__btn").click(function(e) {
+        let state = $(this).attr("data-submit-btn-state")
+
+        if (state == "to-registration") {
+            e.preventDefault()
+            $(this).attr("data-submit-btn-state", "payment")
+            $(this).text("оплатить заказ")
+
+            $(".cart-section__title").text("Оформление заказа")
+            $(".products-count").hide()
+            $(".cart-footer__promocode").hide()
+            $(".cart-section__cart").hide()
+            $(".cart-section__order").show()
+            $("#mobile-footer-acceptance").show()
+            $(window).scrollTop(0)
+            
+        }
+
+        $("[data-check-toggle]").each(toggleItems)
+        toggleAnyItems()
+    })
+
+
+</script>
+
+<script>
+    function toggleTabs(i, tabs) {
+        $(tabs).find("[data-form-tab-id]").each(function(index, tab) {
+            let tabId = $(tab).attr("data-form-tab-id")
+            if ($(tab).hasClass("order-form__tab_active")) {
+                $(tabs).find(`[data-form-body-id=${tabId}]`).show()
+            } else {
+                $(tabs).find(`[data-form-body-id=${tabId}]`).hide()
+            }
+        })
+    }
+    $(".order-form_tabs").each(toggleTabs)
+
+    $("[data-form-tab-id]").click(function() {
+        $(this).parent().find("[data-form-tab-id]").removeClass("order-form__tab_active")
+        $(this).addClass("order-form__tab_active")
+
+        let tabId = $(this).attr("data-form-tab-id")
+
+        $(this).parents(".order-form_tabs").find(`[data-form-body-id]`).hide()
+        $(this).parents(".order-form_tabs").find(`[data-form-body-id=${tabId}]`).show()
+    })
+</script>
+
+<script>
+    $(".radio-card").click(function() {
+        $(this).parent().find(".radio-card").removeClass("radio-card_checked")
+        $(this).addClass("radio-card_checked")
+    })
+</script>
+
         </main>
 
-        <script src="js/app.min.js?_v=20241019145926"></script>
+        <script src="js/app.min.js?_v=20241022180115"></script>
     </body>
 </html>
