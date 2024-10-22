@@ -4,7 +4,17 @@
         <div class="products-count">4 товара</div>
     </div>
     <div class="cart-section__order">
-        <h1 class="tile cart-section__title">оформление заказа</h1>
+        <h1 class="tile cart-section__title" id="order-block-title">оформление заказа</h1>
+        <div class="hint hint_row" data-hint-object="order-block-title">
+            <img src="@img/hint/img.png" alt="" class="hint__img">
+            <img src="@img/hint/close.svg" alt="" class="hint__close">
+            <div class="hint__text">
+                <p>Не устраивает цена доставки?</p>
+                <p>
+                    Менеджер интернет-магазина свяжется с вами в<span> самое ближайшее рабочее время</span> для подтверждения заказа.
+                </p>
+            </div>
+        </div>
         <form class="order-form-section">
             <div class="order-form order-form_desktop tile">
                 <h2 class="order-form__title">Регистрация</h2>
@@ -25,7 +35,7 @@
             <div class="order-form tile">
                 <h2 class="order-form__title">Выберите способ доставки</h2>
                 <div class="order-form__inputs">
-                    <label class="radio">
+                    <label class="radio" id="courier-radio">
                         <input type="radio" name="delivery" value="1" checked data-check-toggle="courier-form">
                         <p>Курьерской службой по Беларуси</p>
                     </label>
@@ -48,6 +58,16 @@
                     <div class="calc-field">
                         <div class="calc-field__title">Экспресс-доставка грузов</div>
                         <div class="calc-field__value">20 BYN</div>
+                    </div>
+                </div>
+                <div class="hint" data-hint-object="courier-radio">
+                    <img src="@img/hint/hint.svg" alt="" class="hint__icon">
+                    <img src="@img/hint/close.svg" alt="" class="hint__close">
+                    <div class="hint__text">
+                        <p>Не устраивает цена доставки?</p>
+                        <p>
+                            Менеджер подберет для вас <span>наиболее выгодный вариант</span> и рассчитает точную стоимость доставки во время подтверждения заказа.
+                        </p>
                     </div>
                 </div>
             </div>

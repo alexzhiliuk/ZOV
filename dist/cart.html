@@ -11,20 +11,20 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241022180115" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241022184204" rel="stylesheet">
     
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20241022180115">
+    <link rel="stylesheet" href="css/style.min.css?_v=20241022184204">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241022180115"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241022184204"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241022180115"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241022180115"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241022184204"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241022184204"></script>
 
     <title>Корзина</title>
 </head>
@@ -848,7 +848,17 @@ function navigationResize() {
         <div class="products-count">4 товара</div>
     </div>
     <div class="cart-section__order">
-        <h1 class="tile cart-section__title">оформление заказа</h1>
+        <h1 class="tile cart-section__title" id="order-block-title">оформление заказа</h1>
+        <div class="hint hint_row" data-hint-object="order-block-title">
+            <img src="img/hint/img.png" alt="" class="hint__img">
+            <img src="img/hint/close.svg" alt="" class="hint__close">
+            <div class="hint__text">
+                <p>Не устраивает цена доставки?</p>
+                <p>
+                    Менеджер интернет-магазина свяжется с вами в<span> самое ближайшее рабочее время</span> для подтверждения заказа.
+                </p>
+            </div>
+        </div>
         <form class="order-form-section">
             <div class="order-form order-form_desktop tile">
                 <h2 class="order-form__title">Регистрация</h2>
@@ -869,7 +879,7 @@ function navigationResize() {
             <div class="order-form tile">
                 <h2 class="order-form__title">Выберите способ доставки</h2>
                 <div class="order-form__inputs">
-                    <label class="radio">
+                    <label class="radio" id="courier-radio">
                         <input type="radio" name="delivery" value="1" checked data-check-toggle="courier-form">
                         <p>Курьерской службой по Беларуси</p>
                     </label>
@@ -892,6 +902,16 @@ function navigationResize() {
                     <div class="calc-field">
                         <div class="calc-field__title">Экспресс-доставка грузов</div>
                         <div class="calc-field__value">20 BYN</div>
+                    </div>
+                </div>
+                <div class="hint" data-hint-object="courier-radio">
+                    <img src="img/hint/hint.svg" alt="" class="hint__icon">
+                    <img src="img/hint/close.svg" alt="" class="hint__close">
+                    <div class="hint__text">
+                        <p>Не устраивает цена доставки?</p>
+                        <p>
+                            Менеджер подберет для вас <span>наиболее выгодный вариант</span> и рассчитает точную стоимость доставки во время подтверждения заказа.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1436,6 +1456,6 @@ function navigationResize() {
 
         </main>
 
-        <script src="js/app.min.js?_v=20241022180115"></script>
+        <script src="js/app.min.js?_v=20241022184204"></script>
     </body>
 </html>
