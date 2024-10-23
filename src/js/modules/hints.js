@@ -17,15 +17,16 @@ function moveHint(el) {
 
 
 $(".hint[data-hint-object]").each(function(i, el) {
+    if ($(window).innerWidth() < 1024) { return }
     moveHint(el)
 })
 
 $(".hint__close").click(function() {
-    $(this).parents(".hint").hide()
+    $(this).parents(".hint").remove()
 })
 
 $(window).resize(function() {
-    if (window.innerWidth < 1024) {
+    if ($(window).innerWidth() < 1024) {
         $(".hint[data-hint-object]")
             .css("position", "")
             .css("top", "")

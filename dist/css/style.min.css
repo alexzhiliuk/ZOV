@@ -2369,7 +2369,7 @@ textarea {
 .hint {
   position: relative;
   z-index: 3;
-  margin: 0;
+  margin: 5px 0;
   display: flex;
   flex-direction: column;
   gap: 12px;

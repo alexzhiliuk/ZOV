@@ -596,6 +596,13 @@
         toggleAnyItems()
     })
 
+    $(window).resize(function() {
+        if (!$(".cart-footer").is(":visible") || $(window).innerWidth < 1024) { return }
+        $(".cart-section__cart").css("display", "")
+        $(".cart-section__order").css("display", "")
+        $(".cart-footer__btn").attr("data-submit-btn-state", "to-registration").text("Перейти к оформлению")
+    })
+
 
 </script>
 
@@ -620,12 +627,5 @@
 
         $(this).parents(".order-form_tabs").find(`[data-form-body-id]`).hide()
         $(this).parents(".order-form_tabs").find(`[data-form-body-id=${tabId}]`).show()
-    })
-</script>
-
-<script>
-    $(".radio-card").click(function() {
-        $(this).parent().find(".radio-card").removeClass("radio-card_checked")
-        $(this).addClass("radio-card_checked")
     })
 </script>
