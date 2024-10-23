@@ -24,7 +24,27 @@
                 <div class="order-form__inputs">
                     <input type="text" class="input" placeholder="Имя и фамилия *" required>
                     <input type="email" class="input" placeholder="Ваш E-mail *" required>
-                    <input type="tel" class="input" placeholder="Номер телефона *" required>
+                    <div class="tel-input">
+                        <div class="tels-toggle">
+                            <div class="tels-toggle__active">
+                                <img src="@img/tel/Icons/Property 1=BEL.png" alt="">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 0L10 5H4L7 0Z" fill="#818181"/>
+                                    <path d="M7 14L4 9L10 9L7 14Z" fill="#818181"/>
+                                </svg>                                    
+                            </div>
+                            <div class="tels-toggle-list">
+                                <div class="tels-toggle-list__item" data-tel-country="bel">
+                                    <img src="@img/tel/Icons/Property 1=BEL.png" alt="">
+                                </div>
+                                <div class="tels-toggle-list__item" data-tel-country="rus">
+                                    <img src="@img/tel/Icons/Property 1=RU.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="tel" class="input" placeholder="+375 (**) *** ** **" required data-tel-country="bel" data-tel-by-input>
+                        <input type="tel" class="input" placeholder="+7 (***) *** ** **" required data-tel-country="rus" data-tel-input style="display: none;">
+                    </div>
 
                     <label class="confirm-checkbox">
                         <input type="checkbox">

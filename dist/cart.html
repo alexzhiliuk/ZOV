@@ -11,20 +11,20 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241022184204" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241023160444" rel="stylesheet">
     
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20241022184204">
+    <link rel="stylesheet" href="css/style.min.css?_v=20241023160444">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241022184204"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241023160444"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241022184204"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241022184204"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241023160444"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241023160444"></script>
 
     <title>Корзина</title>
 </head>
@@ -868,7 +868,27 @@ function navigationResize() {
                 <div class="order-form__inputs">
                     <input type="text" class="input" placeholder="Имя и фамилия *" required>
                     <input type="email" class="input" placeholder="Ваш E-mail *" required>
-                    <input type="tel" class="input" placeholder="Номер телефона *" required>
+                    <div class="tel-input">
+                        <div class="tels-toggle">
+                            <div class="tels-toggle__active">
+                                <img src="img/tel/Icons/Property 1=BEL.png" alt="">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 0L10 5H4L7 0Z" fill="#818181"/>
+                                    <path d="M7 14L4 9L10 9L7 14Z" fill="#818181"/>
+                                </svg>                                    
+                            </div>
+                            <div class="tels-toggle-list">
+                                <div class="tels-toggle-list__item" data-tel-country="bel">
+                                    <img src="img/tel/Icons/Property 1=BEL.png" alt="">
+                                </div>
+                                <div class="tels-toggle-list__item" data-tel-country="rus">
+                                    <img src="img/tel/Icons/Property 1=RU.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="tel" class="input" placeholder="+375 (**) *** ** **" required data-tel-country="bel" data-tel-by-input>
+                        <input type="tel" class="input" placeholder="+7 (***) *** ** **" required data-tel-country="rus" data-tel-input style="display: none;">
+                    </div>
 
                     <label class="confirm-checkbox">
                         <input type="checkbox">
@@ -1456,6 +1476,6 @@ function navigationResize() {
 
         </main>
 
-        <script src="js/app.min.js?_v=20241022184204"></script>
+        <script src="js/app.min.js?_v=20241023160444"></script>
     </body>
 </html>

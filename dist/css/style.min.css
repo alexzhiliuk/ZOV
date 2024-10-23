@@ -567,7 +567,7 @@ button {
   background: #40BFA5;
 }
 
-.input, .calc-field {
+.input, .tel-input, .calc-field {
   padding: 16px 20px;
   background: #FAFAFA;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -578,7 +578,7 @@ button {
   line-height: 1.5;
   color: #1A1A1A;
 }
-.input::placeholder, .calc-field::placeholder {
+.input::placeholder, .tel-input::placeholder, .calc-field::placeholder {
   color: rgba(26, 26, 26, 0.5);
 }
 
@@ -2426,6 +2426,59 @@ textarea {
 }
 .hint__text span {
   color: #000000;
+}
+
+.tel-input {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+.tel-input .input, .tel-input .calc-field, .tel-input .tel-input {
+  background: none;
+  border: none;
+  padding-left: 10px;
+}
+
+.tels-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.tels-toggle__active {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  width: 63px;
+  pointer-events: none;
+}
+.tels-toggle__active img {
+  width: 32px;
+  height: auto;
+  display: block;
+}
+.tels-toggle-list {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: calc(100% + 10px);
+  background: #FAFAFA;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+.tels-toggle-list_active {
+  display: block;
+}
+.tels-toggle-list__item {
+  width: 40px;
+  padding: 4px;
+}
+.tels-toggle-list__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
 }
 
 @font-face {
