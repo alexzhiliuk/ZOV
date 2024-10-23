@@ -11,20 +11,20 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241023162834" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241023163720" rel="stylesheet">
     
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20241023162834">
+    <link rel="stylesheet" href="css/style.min.css?_v=20241023163720">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241023162834"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241023163720"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241023162834"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241023162834"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241023163720"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241023163720"></script>
 
     <title>Корзина</title>
 </head>
@@ -1441,7 +1441,7 @@ function navigationResize() {
     })
 
     $(window).resize(function() {
-        if (!$(".cart-footer").is(":visible") || $(window).innerWidth < 1024) { return }
+        if (!$(".cart-footer").is(":visible") || $(window).innerWidth() < 1024) { return }
         $(".cart-section__cart").css("display", "")
         $(".cart-section__order").css("display", "")
         $(".cart-footer__btn").attr("data-submit-btn-state", "to-registration").text("Перейти к оформлению")
@@ -1476,6 +1476,6 @@ function navigationResize() {
 
         </main>
 
-        <script src="js/app.min.js?_v=20241023162834"></script>
+        <script src="js/app.min.js?_v=20241023163720"></script>
     </body>
 </html>

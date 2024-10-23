@@ -597,7 +597,7 @@
     })
 
     $(window).resize(function() {
-        if (!$(".cart-footer").is(":visible") || $(window).innerWidth < 1024) { return }
+        if (!$(".cart-footer").is(":visible") || $(window).innerWidth() < 1024) { return }
         $(".cart-section__cart").css("display", "")
         $(".cart-section__order").css("display", "")
         $(".cart-footer__btn").attr("data-submit-btn-state", "to-registration").text("Перейти к оформлению")
