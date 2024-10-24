@@ -1729,9 +1729,6 @@ textarea {
     color: #424242;
     padding: 0;
     margin-top: 6px;
-    z-index: 1;
-    left: 0;
-    top: calc(100% + 6px);
     text-transform: none;
   }
 }
