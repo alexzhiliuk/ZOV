@@ -936,6 +936,7 @@ textarea {
 }
 .header__social:hover img {
   filter: brightness(80%);
+  -webkit-filter: brightness(80%);
 }
 .header__social_gray:hover svg *[fill] {
   fill: #444444;

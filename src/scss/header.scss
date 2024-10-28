@@ -173,7 +173,8 @@
 
         &:hover {
             img {
-                filter: brightness(80%)
+                filter: brightness(80%);
+                -webkit-filter: brightness(80%);
             }
         }
 
