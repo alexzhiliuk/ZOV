@@ -36,6 +36,11 @@
                 display: none;
             }
         }
+
+        .btn {
+            font-weight: 400;
+            min-width: min(100%, 358px);
+        }
     }
 
     // .cart-section__title
@@ -65,7 +70,6 @@
             display: flex;
         }
     }
-
     
 }
 

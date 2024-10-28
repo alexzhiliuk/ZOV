@@ -135,7 +135,7 @@ button {
 
     display: flex;
     
-    font-weight: 400;
+    font-weight: 300;
     font-size: clamp(14px, 1.6vw, 16px);
     line-height: 1.5;
     color: $colorText;
@@ -228,6 +228,11 @@ textarea {
         }
     }
 
+
+    strong {
+        font-weight: 500;
+    }
+
 }
 
 .radio {
@@ -267,6 +272,10 @@ textarea {
                 background: $colorText;
             }
         }
+    }
+
+    strong {
+        font-weight: 600;
     }
 
 }
