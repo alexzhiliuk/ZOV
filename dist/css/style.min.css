@@ -835,7 +835,7 @@ textarea {
   translate: -50% -100%;
   color: #FFFFFF;
 }
-.header__inner_scrolled .header__row .header__icons-menu-item img {
+.header__inner_scrolled .header__row .header__icons-menu-item > img {
   filter: invert(1);
   -webkit-filter: invert(1);
 }
@@ -929,10 +929,21 @@ textarea {
 .header__socials_nogap {
   gap: 0;
 }
-.header__social img {
+.header__social svg, .header__social img {
   width: 30px;
   height: auto;
   display: block;
+}
+.header__social:hover img {
+  filter: brightness(80%);
+}
+.header__social_gray:hover svg *[fill] {
+  fill: #444444;
+}
+.header__social_gray:hover svg *[fill=white],
+.header__social_gray:hover svg *[fill="#fff"],
+.header__social_gray:hover svg *[fill="#ffffff"] {
+  fill: white;
 }
 .header__btn {
   display: flex;
@@ -983,7 +994,7 @@ textarea {
 .header__icons-menu_mingap {
   gap: 6px;
 }
-.header__icons-menu-item img {
+.header__icons-menu-item > img {
   width: 38px;
   height: auto;
   cursor: pointer;
@@ -1152,7 +1163,7 @@ textarea {
 }
 .additional-menu__inner {
   padding: 20px 18px;
-  min-width: 234px;
+  min-width: 355px;
   position: absolute;
   z-index: 9;
   top: -12px;
@@ -1162,7 +1173,7 @@ textarea {
   border-radius: 8px;
   display: none;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 .additional-menu__inner_open {
   display: flex;
@@ -1176,12 +1187,13 @@ textarea {
 .additional-menu__list {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 .additional-menu__link {
   display: flex;
   padding: 6px 0;
-  font-size: 14px;
-  line-height: 1.125;
+  font-size: 18px;
+  line-height: 0.88;
   font-weight: 400;
   color: #333333;
 }
@@ -1193,11 +1205,18 @@ textarea {
   display: flex;
   align-items: flex-start;
   gap: 6px;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 1.125;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
   color: #4D4D4D;
   padding: 6px 0;
+}
+.additional-menu__contact span {
+  font-weight: 500;
+}
+.additional-menu .header__icons-menu-item img {
+  filter: unset;
+  -webkit-filter: unset;
 }
 
 .header-search {

@@ -40,7 +40,7 @@
                 }
 
                 .header__icons-menu-item {
-                    img {
+                    & > img {
                         filter: invert(1);
                         -webkit-filter: invert(1);
                     }
@@ -165,10 +165,32 @@
 
     // .header__social
     &__social {
-        img {
+        svg, img {
             width: 30px;
             height: auto;
             display: block;
+        }
+
+        &:hover {
+            img {
+                filter: brightness(80%)
+            }
+        }
+
+        &_gray {
+            &:hover {
+                svg {
+                    *[fill] {
+                        fill: #444444;   
+                    }
+
+                    *[fill="white"],
+                    *[fill="#fff"],
+                    *[fill="#ffffff"] {
+                        fill: white;
+                    }
+                }
+            }
         }
     }
 
@@ -239,7 +261,7 @@
 
     // .header__icons-menu-item
     &__icons-menu-item {
-        img {
+        & > img {
             width: 38px;
             height: auto;
             cursor: pointer;
@@ -481,7 +503,7 @@
     // .additional-menu__inner
     &__inner {
         padding: 20px 18px;
-        min-width: 234px;
+        min-width: 355px;
 
         position: absolute;
         z-index: $headerLayer;
@@ -494,7 +516,7 @@
 
         display: none;
         flex-direction: column;
-        gap: 16px;
+        gap: 24px;
 
         &_open {
             display: flex;
@@ -513,14 +535,15 @@
     &__list {
         display: flex;
         flex-direction: column;
+        gap: 8px;
     }
 
     // .additional-menu__link
     &__link {
         display: flex;
         padding: 6px 0;
-        font-size: 14px;
-        line-height: 1.125;
+        font-size: 18px;
+        line-height: .88;
         font-weight: 400;
         color: #333333;
     }
@@ -537,13 +560,22 @@
         align-items: flex-start;
         gap: 6px;
 
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 1.125;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.5;
         color: #4D4D4D;
 
         padding: 6px 0;
 
+        span {
+            font-weight: 500;
+        }
+
+    }
+
+    .header__icons-menu-item img {
+        filter: unset;
+        -webkit-filter: unset;
     }
 }
 
