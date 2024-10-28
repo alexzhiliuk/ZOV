@@ -315,6 +315,9 @@ textarea {
     color: $colorText;
 
     max-width: 320px;
+    @media screen and (max-width: $breakpoint576) {
+        max-width: unset;
+    }
 
     &_checked {
         background: #D9F2ED;
