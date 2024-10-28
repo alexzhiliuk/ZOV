@@ -1092,8 +1092,10 @@ textarea {
 .header__droplist-link {
   color: #333333;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.125;
   text-wrap: nowrap;
+  padding: 3px 0;
+  display: block;
 }
 .header__droplist-img {
   width: 156px;
