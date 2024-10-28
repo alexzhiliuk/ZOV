@@ -322,7 +322,7 @@ textarea {
     color: $colorText;
 
     max-width: 320px;
-    @media screen and (max-width: $breakpoint576) {
+    @media screen and (max-width: $breakpoint1024) {
         max-width: unset;
     }
 
@@ -348,6 +348,32 @@ textarea {
         text-align: right;
         font-weight: 300;
         text-wrap: nowrap;
+    }
+
+    &_jcc {
+        justify-content: center;
+        flex: 1 1 fit-content;
+        padding: 16px;
+    }
+
+    &_outline {
+        border-color: #B3B3B3;
+        background: none;
+
+        .radio-card__title {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        &.radio-card_checked {
+            border-color: #40BFA5;
+            background: $colorWhite;
+
+            .radio-card__title {
+                font-weight: 500;
+            }
+        }
     }
 }
 

@@ -714,7 +714,7 @@ textarea {
   color: #1A1A1A;
   max-width: 320px;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 1024.98px) {
   .radio-card {
     max-width: unset;
   }
@@ -736,6 +736,27 @@ textarea {
   text-align: right;
   font-weight: 300;
   text-wrap: nowrap;
+}
+.radio-card_jcc {
+  justify-content: center;
+  flex: 1 1 fit-content;
+  padding: 16px;
+}
+.radio-card_outline {
+  border-color: #B3B3B3;
+  background: none;
+}
+.radio-card_outline .radio-card__title {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.radio-card_outline.radio-card_checked {
+  border-color: #40BFA5;
+  background: #FFFFFF;
+}
+.radio-card_outline.radio-card_checked .radio-card__title {
+  font-weight: 500;
 }
 
 .page-title {
