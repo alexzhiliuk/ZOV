@@ -185,6 +185,13 @@
         border-radius: 8px;
         background: $colorGreen;
         padding: 10px 28px;
+
+        &:hover {
+            background: #39AD94;
+        }
+        &:active {
+            background: #339984;
+        }
     }
 
     // .header__title

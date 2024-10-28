@@ -123,6 +123,13 @@ button {
 
     &_green {
         background: #40BFA5;
+
+        &:hover {
+            background: #39AD94;
+        }
+        &:active {
+            background: #339984;
+        }
     }
 
 }

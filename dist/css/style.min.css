@@ -566,6 +566,12 @@ button {
 .btn_green {
   background: #40BFA5;
 }
+.btn_green:hover {
+  background: #39AD94;
+}
+.btn_green:active {
+  background: #339984;
+}
 
 .input, .tel-input, .calc-field {
   padding: 16px 20px;
@@ -917,6 +923,12 @@ textarea {
   border-radius: 8px;
   background: #40C3A8;
   padding: 10px 28px;
+}
+.header__btn:hover {
+  background: #39AD94;
+}
+.header__btn:active {
+  background: #339984;
 }
 .header__title {
   line-height: 1.75;
