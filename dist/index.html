@@ -11,20 +11,20 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241031103745" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241031163346" rel="stylesheet">
     
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20241031103745">
+    <link rel="stylesheet" href="css/style.min.css?_v=20241031163346">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241031103745"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241031163346"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241031103745"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241031103745"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241031163346"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241031163346"></script>
 
     <title>Главная</title>
 </head>
@@ -859,7 +859,7 @@
                 <li>
                     <a href="" class="additional-menu__contact">
                         <span>7577</span>
-                        Бесплатный номер
+                        Бесплатный номер <br>
                         для абонентов МТС / А1
                     </a>
                 </li>
@@ -1126,7 +1126,7 @@ function navigationResize() {
     </div>
     <div class="hero__banners">
         <div class="hero__banners-wrapper">
-            <a class="banner" style="--bg: #C09564; --color: #FFF;">
+            <a href="" class="banner" style="--bg: #C09564; --color: #FFF;">
                 <h3 class="banner__title">
                     Скидка 10%
                     на новые шкафы Магнус
@@ -1135,7 +1135,7 @@ function navigationResize() {
                     <img src="img/hero/banner-1.png" alt="">
                 </div>
             </a>
-            <a class="banner" style="--bg: #747D8E; --color: #FFF;">
+            <a href="" class="banner" style="--bg: #747D8E; --color: #FFF;">
                 <h3 class="banner__title">
                     Скидка 10%
                     на комод Леонардо
@@ -1144,7 +1144,7 @@ function navigationResize() {
                     <img src="img/hero/banner-2.png" alt="">
                 </div>
             </a>
-            <a class="banner" style="--bg: #414141; --color: #FFF; --highlight: #FFBC70;">
+            <a href="" class="banner" style="--bg: #414141; --color: #FFF; --highlight: #FFBC70;">
                 <h3 class="banner__title">
                     <span>Черная пятница.</span> Грандиозные скидки на мебель
                     от фабрики «ЗОВ»
@@ -1293,8 +1293,8 @@ function navigationResize() {
 
 <section class="catalog container ">
     <h2 class="section-title">Коллекции</h2>
-    <div class="catalog-slider">
-        <a href="" class="catalog-card catalog-card_inline" style="--bg: #827E94;" data-marker-text="SALE" data-marker-bg="#FFB835">
+    <div class="catalog-slider draggable">
+        <a href="#" class="catalog-card catalog-card_inline" style="--bg: #827E94;" data-marker-text="SALE" data-marker-bg="#FFB835">
             <h4 class="catalog-card__title">
                 Аврора
             </h4>
@@ -1302,7 +1302,7 @@ function navigationResize() {
                 <img src="img/catalog/inline/product-1.png" alt="">
             </div>
         </a>
-        <a href="" class="catalog-card catalog-card_inline" style="--bg: #827E94;">
+        <a href="#" class="catalog-card catalog-card_inline" style="--bg: #827E94;">
             <h4 class="catalog-card__title">
                 Паола
             </h4>
@@ -1310,7 +1310,7 @@ function navigationResize() {
                 <img src="img/catalog/inline/product-1.png" alt="">
             </div>
         </a>
-        <a href="" class="catalog-card catalog-card_inline" style="--bg: #827E94;">
+        <a href="#" class="catalog-card catalog-card_inline" style="--bg: #827E94;">
             <h4 class="catalog-card__title">
                 Канзас
             </h4>
@@ -1318,7 +1318,7 @@ function navigationResize() {
                 <img src="img/catalog/inline/product-1.png" alt="">
             </div>
         </a>
-        <a href="" class="catalog-card catalog-card_inline" style="--bg: #827E94;">
+        <a href="#" class="catalog-card catalog-card_inline" style="--bg: #827E94;">
             <h4 class="catalog-card__title">
                 Мадейра
             </h4>
@@ -1326,7 +1326,7 @@ function navigationResize() {
                 <img src="img/catalog/inline/product-1.png" alt="">
             </div>
         </a>
-        <a href="" class="catalog-card catalog-card_inline" style="--bg: #827E94;">
+        <a href="#" class="catalog-card catalog-card_inline" style="--bg: #827E94;">
             <h4 class="catalog-card__title">
                 Корфу
             </h4>
@@ -1337,8 +1337,56 @@ function navigationResize() {
 
     </div>
 </section>
+
+<script>
+
+    let mouseDown = false;
+    let isDragging = false;
+    let startX, scrollLeft;
+    const slider = document.querySelector('.draggable');
+
+    const startDragging = (e) => {
+        mouseDown = true;
+        isDragging = false; // сбрасываем флаг перетаскивания
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    }
+
+    const stopDragging = (e) => {
+        mouseDown = false;
+    }
+
+    const move = (e) => {
+        e.preventDefault();
+        if (!mouseDown) { return; }
+        
+        const x = e.pageX - slider.offsetLeft;
+        const scroll = x - startX;
+        slider.scrollLeft = scrollLeft - scroll;
+        
+        if (Math.abs(scroll) > 5) { // если движение больше 5px, считаем, что началось перетаскивание
+            isDragging = true;
+        }
+    }
+
+    // Предотвращаем переход по ссылке, если было перетаскивание
+    slider.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (isDragging) {
+                e.preventDefault(); // отменяем переход по ссылке
+            }
+        });
+    });
+
+    // Добавляем обработчики событий
+    slider.addEventListener('mousemove', move, false);
+    slider.addEventListener('mousedown', startDragging, false);
+    slider.addEventListener('mouseup', stopDragging, false);
+    slider.addEventListener('mouseleave', stopDragging, false);
+
+</script>
         </main>
 
-        <script src="js/app.min.js?_v=20241031103745"></script>
+        <script src="js/app.min.js?_v=20241031163346"></script>
     </body>
 </html>

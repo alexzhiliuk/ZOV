@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: clamp(30px, 6vw,  60px);
 
 
     // .tapbar__item
@@ -43,7 +43,7 @@
 
     // .tapbar__icon
     &__icon {
-        width: 26px;
+        width: 30px;
 
         img {
             width: 100%;
@@ -54,7 +54,7 @@
 
     // .tapbar__caption
     &__caption {
-        font-size: 8px;
+        font-size: 12px;
         line-height: 1.125;
         color: #191919;
     }

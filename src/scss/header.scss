@@ -283,6 +283,12 @@
         align-items: center;
 
         &_hovering {
+            .header__menu-link {
+                transition: none;
+            }
+            .header__droplist {
+                transition: none;
+            }
             li:not(.more) {
                 position: relative;
     
@@ -310,7 +316,7 @@
                         &::after {
                             content: '';
                             position: absolute;
-                            bottom: 0;
+                            bottom: 1px;
                             right: 0;
                             translate: 100%;
                             $cornerSize: 10px;
@@ -354,6 +360,7 @@
             text-align: left;
             -webkit-transition-duration: .3s;
             transition-duration: .3s;
+            transition: none;
 
             background: #FFF;
             color: #1A1A1A;
@@ -380,7 +387,8 @@
                     &::after {
                         
                         right: unset;
-                        left: 0;
+                        top: 33px;
+                        left: 1px;
 
                         translate: 0 100%;
                         $cornerSize: 10px;

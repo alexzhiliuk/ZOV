@@ -56,6 +56,8 @@
 
         &:last-of-type {
             flex-shrink: 1;
+            max-width: unset;
+            width: fit-content;
         }
 
     }

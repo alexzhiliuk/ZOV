@@ -92,6 +92,8 @@
 
     position: relative;
     border-radius: clamp(8px, 2vw, 24px);
+    user-select: none;
+    -webkit-user-drag: none;
 
     @media screen and (max-width: $breakpoint768) {
         display: flex;
