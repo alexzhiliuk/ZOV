@@ -8,7 +8,7 @@ const swiperHero = new Swiper('.main-banner-slider', {
     allowTouchMove: false,
     loop: true,
     autoplay: {
-        delay: 5000,
+        delay: 10000,
         disableOnInteraction: false,
     },
     
