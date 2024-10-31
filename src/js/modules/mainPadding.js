@@ -8,7 +8,13 @@ function setMainTopPadding() {
     }
 
     $("main").css("padding-top", `${mainPadding}px`);
-    bannerPadding ? $(".main-banner").css("padding-top", `${bannerPadding}px`).css("margin-top", `-${bannerPadding}px`) : $(".main-banner").css("padding-top", '').css("margin-top", ``);
+    if (bannerPadding) {
+        $(".hero__main-banner").css("margin-top", `-${bannerPadding}px`)
+        $(".main-banner").css("padding-top", `${bannerPadding}px`)
+    } else {
+        $(".hero__main-banner").css("margin-top", ``)
+        $(".main-banner").css("padding-top", ``)
+    }
 }
 setMainTopPadding()
 

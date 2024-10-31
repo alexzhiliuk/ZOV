@@ -1,28 +1,63 @@
 <section class="hero container container_wide">
-    <div class="hero__main-banner main-banner" style="--color: #FFF; --highlight: #FFBB80;">
-        <img class="main-banner__img" src="@img/hero/main-banner.png" alt="">
-        <div class="main-banner__tags">
-            <div class="main-banner__tag main-banner__tag_dot" style="--tag-dot-color: #F0A462; --tag-bg: #2E2E2E;">
-                В НАЛИЧИИ
-                <!-- <img src="@img/hero/tag-1.png" alt=""> -->
-            </div>
-            <div class="main-banner__tag" style="--tag-bg: #F0A462;">
-                Товар недели
-                <!-- <img src="@img/hero/tag-2.png" alt=""> -->
+    <div class="hero__main-banner">
+        <div class="swiper main-banner-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="main-banner" style="--color: #FFF; --highlight: #FFBB80;">
+                        <img class="main-banner__img" src="@img/hero/main-banner.png" alt="">
+                        <div class="main-banner__tags">
+                            <div class="main-banner__tag main-banner__tag_dot" style="--tag-dot-color: #F0A462; --tag-bg: #2E2E2E;">
+                                В НАЛИЧИИ
+                                <!-- <img src="@img/hero/tag-1.png" alt=""> -->
+                            </div>
+                            <div class="main-banner__tag" style="--tag-bg: #F0A462;">
+                                Товар недели
+                                <!-- <img src="@img/hero/tag-2.png" alt=""> -->
+                            </div>
+                        </div>
+                        <h2 class="main-banner__title">
+                            Коллекция Аврора в наличии <br> <span>со скидкой 10%</span>
+                        </h2>
+                        <p class="main-banner__subtitle">
+                            Только до конца недели!
+                        </p>
+                        <a href="" class="main-banner__btn btn">
+                            узнать цену
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 10H19M19 10L15.246 6M19 10L15.246 14" stroke="white" stroke-linecap="round"/>
+                            </svg>                
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main-banner" style="--color: #FFF; --highlight: #FFBB80;">
+                        <img class="main-banner__img" src="@img/hero/main-banner.png" alt="">
+                        <div class="main-banner__tags">
+                            <div class="main-banner__tag main-banner__tag_dot" style="--tag-dot-color: #F0A462; --tag-bg: #2E2E2E;">
+                                В НАЛИЧИИ
+                                <!-- <img src="@img/hero/tag-1.png" alt=""> -->
+                            </div>
+                            <div class="main-banner__tag" style="--tag-bg: #F0A462;">
+                                Товар недели
+                                <!-- <img src="@img/hero/tag-2.png" alt=""> -->
+                            </div>
+                        </div>
+                        <h2 class="main-banner__title">
+                            Коллекция Аврора в наличии <br> <span>со скидкой 10%</span>
+                        </h2>
+                        <p class="main-banner__subtitle">
+                            Только до конца недели!
+                        </p>
+                        <a href="" class="main-banner__btn btn">
+                            узнать цену
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 10H19M19 10L15.246 6M19 10L15.246 14" stroke="white" stroke-linecap="round"/>
+                            </svg>                
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        <h2 class="main-banner__title">
-            Коллекция Аврора в наличии <br> <span>со скидкой 10%</span>
-        </h2>
-        <p class="main-banner__subtitle">
-            Только до конца недели!
-        </p>
-        <a href="" class="main-banner__btn btn">
-            узнать цену
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 10H19M19 10L15.246 6M19 10L15.246 14" stroke="white" stroke-linecap="round"/>
-            </svg>                
-        </a>
     </div>
     <div class="hero__banners">
         <div class="hero__banners-wrapper">
@@ -60,7 +95,7 @@
 <script>
 
     function setMainBannerLeftPadding() {
-        let leftPos = $(".main-banner").offset().left;
+        let leftPos = $(".hero__main-banner").offset().left;
 
         if (leftPos > 20) {
             $(".main-banner").css("padding-left", "60px");

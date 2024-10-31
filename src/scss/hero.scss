@@ -11,9 +11,17 @@
     // .hero__main-banner
     &__main-banner {
         flex: 0 0 calc(72% - 5px);
+        max-width: calc(72% - 5px);
 
         @media screen and (max-width: $breakpoint1440) {
             flex: unset;
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: $burgerBreakpoint) {
+            margin: 0 calc(-1 * $containerPadding);
+            width: 100vw;
+            max-width: unset;
         }
     }
 
@@ -62,6 +70,10 @@
     }
 }
 
+.main-banner-slider {
+    height: 100%;
+}
+
 .main-banner {
 
     position: relative;
@@ -69,12 +81,13 @@
     flex-direction: column;
     border-radius: 16px;
     overflow: hidden;
+    height: 100%;
 
     padding: 80px 0;
 
     @media screen and (max-width: $burgerBreakpoint) {
         border-radius: 0;
-        margin: 0 calc(-1 * $containerPadding);
+        // margin: 0 calc(-1 * $containerPadding);
         min-height: min(115vw, 600px);
         padding-bottom: 30px;
         padding-right: 20px;
