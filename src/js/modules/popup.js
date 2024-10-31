@@ -20,6 +20,6 @@ $(document).keyup(function(e) {
         $("body, html").removeClass("lock")
     }
 });
-$('[data-popup-open], .popup__close, .popup__inner').click(function(event){
+$('[data-popup-open], .popup__close, .popup__inner, .header__burger, .mobile-menu').click(function(event){
     event.stopPropagation();
 });

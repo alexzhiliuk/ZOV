@@ -117,7 +117,31 @@
 
     // .main-banner__tag
     &__tag {
-        height: 46px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.33;
+        text-transform: uppercase;
+        padding: .55em 1em;
+
+        background: var(--tag-bg, #2E2E2E);
+        color: var(--tag-text-color, $colorWhite);
+        border-radius: 50px;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+
+        &_dot {
+            &::after {
+                content: '';
+                border-radius: 50%;
+                display: block;
+                width: 0.88em;
+                aspect-ratio: 1;
+                background: var(--tag-dot-color, white);
+            }
+        }
 
         img {
             height: 100%;
