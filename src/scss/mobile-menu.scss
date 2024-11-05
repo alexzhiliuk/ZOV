@@ -298,12 +298,17 @@
             text-wrap: nowrap;
         }
 
+        // .additional-menu__contacts
+        &__contacts {
+            gap: 12px;
+        }
+
         // .additional-menu__contact
         &__contact {
             text-wrap: nowrap;
             font-size: 12px;
             padding: 0;
-            line-height: 2;
+            line-height: 1.16;
         }
     
     }

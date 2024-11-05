@@ -1577,11 +1577,14 @@ textarea {
   line-height: 16px;
   text-wrap: nowrap;
 }
+.mobile-menu .additional-menu__contacts {
+  gap: 12px;
+}
 .mobile-menu .additional-menu__contact {
   text-wrap: nowrap;
   font-size: 12px;
   padding: 0;
-  line-height: 2;
+  line-height: 1.16;
 }
 
 .hero {
