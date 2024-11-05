@@ -4,7 +4,7 @@
     }
     position: fixed;
     z-index: $headerLayer;
-    bottom: 14px;
+    bottom: 4px;
     left: 8px;
     right: 8px;
 
@@ -23,7 +23,7 @@
     &__item {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        padding-top: 6px;
         align-items: center;
         width: 54px;
         aspect-ratio: 1;
@@ -43,7 +43,7 @@
 
     // .tapbar__icon
     &__icon {
-        width: 30px;
+        width: 26px;
 
         img {
             width: 100%;
@@ -54,8 +54,27 @@
 
     // .tapbar__caption
     &__caption {
-        font-size: 12px;
+        font-family: 'Inter';
+        font-size: 8px;
         line-height: 1.125;
         color: #191919;
+    }
+}
+
+
+.mobile-fixed-button {
+    @media screen and (min-width: $burgerBreakpoint) {
+        display: none;
+    }
+    position: fixed;
+    right: 4px;
+    bottom: 87px;
+    width: 72px;
+    z-index: 9;
+
+    svg {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 }

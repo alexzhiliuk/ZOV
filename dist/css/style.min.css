@@ -760,21 +760,21 @@ textarea {
 }
 
 .page-title {
-  font-weight: 700;
+  font-weight: 600;
   font-size: clamp(16px, 4.5vw, 44px);
   line-height: 0.86;
   text-transform: uppercase;
   color: #000000;
-  margin-bottom: clamp(20px, 5vw, 50px);
+  margin-bottom: clamp(16px, 4.5vw, 50px);
 }
 
 .section-title {
-  font-weight: 700;
+  font-weight: 600;
   font-size: clamp(14px, 4vw, 38px);
   line-height: 1.25;
   text-transform: uppercase;
   color: #292929;
-  margin-bottom: clamp(16px, 5vw, 40px);
+  margin-bottom: clamp(16px, 4vw, 40px);
 }
 
 [data-marker-text] {
@@ -831,7 +831,7 @@ textarea {
   pointer-events: none;
 }
 .header__inner_scrolled .header__row_out {
-  top: 115px;
+  top: 105px;
   translate: -50% -100%;
   color: #FFFFFF;
 }
@@ -847,7 +847,7 @@ textarea {
 }
 .header__row_out {
   position: absolute;
-  top: 143px;
+  top: 123px;
   left: 50%;
   translate: -50%;
   color: #1A1A1A;
@@ -905,6 +905,7 @@ textarea {
 }
 .header__logo img {
   width: 100%;
+  display: block;
 }
 .header__phone {
   font-size: clamp(20px, 4vw, 32px);
@@ -999,6 +1000,7 @@ textarea {
   width: 38px;
   height: auto;
   cursor: pointer;
+  display: block;
 }
 .header__menu {
   display: flex;
@@ -1036,12 +1038,12 @@ textarea {
 .header__menu_hovering li:not(.more):hover .header__menu-link::after {
   content: "";
   position: absolute;
-  bottom: 1px;
+  bottom: 0;
   right: 0;
   translate: 100%;
-  width: 10px;
+  width: 15px;
   aspect-ratio: 1;
-  background-image: radial-gradient(circle at 10px 0px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10px, #FFF 10px);
+  background-image: radial-gradient(circle at 15px -1px, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 15px, #FFF 15px);
   z-index: 0;
 }
 .header__menu_hovering li:not(.more):hover .header__droplist {
@@ -1171,7 +1173,7 @@ textarea {
   position: relative;
 }
 .additional-menu__inner {
-  padding: 20px 18px;
+  padding: 28px;
   min-width: 355px;
   position: absolute;
   z-index: 9;
@@ -1179,7 +1181,7 @@ textarea {
   left: -20px;
   background: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 16px;
   display: none;
   flex-direction: column;
   gap: 24px;
@@ -1206,6 +1208,10 @@ textarea {
   font-weight: 400;
   color: #333333;
 }
+.additional-menu__link:hover {
+  font-weight: 500;
+  color: #1A1A1A;
+}
 .additional-menu__contacts {
   display: flex;
   flex-direction: column;
@@ -1218,7 +1224,7 @@ textarea {
   font-size: 16px;
   line-height: 1.5;
   color: #4D4D4D;
-  padding: 6px 0;
+  padding: 4px 0;
 }
 .additional-menu__contact span {
   font-weight: 500;
@@ -1254,12 +1260,21 @@ textarea {
     right: 8px;
     min-height: 62px;
     border-radius: 8px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .header__inner {
+    padding-left: 12px;
+    padding-right: 16px;
   }
   .header__row:nth-child(n+2) {
     display: none;
   }
   .header__logo {
     margin-right: auto;
+  }
+  .header__socials .header__phone {
+    margin-right: 0;
   }
   .header__btn {
     display: none;
@@ -1277,7 +1292,7 @@ textarea {
 .tapbar {
   position: fixed;
   z-index: 9;
-  bottom: 14px;
+  bottom: 4px;
   left: 8px;
   right: 8px;
   background: #FFFFFF;
@@ -1297,7 +1312,7 @@ textarea {
 .tapbar__item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 6px;
   align-items: center;
   width: 54px;
   aspect-ratio: 1;
@@ -1310,7 +1325,7 @@ textarea {
   color: #39AC94;
 }
 .tapbar__icon {
-  width: 30px;
+  width: 26px;
 }
 .tapbar__icon img {
   width: 100%;
@@ -1318,9 +1333,28 @@ textarea {
   display: block;
 }
 .tapbar__caption {
-  font-size: 12px;
+  font-family: "Inter";
+  font-size: 8px;
   line-height: 1.125;
   color: #191919;
+}
+
+.mobile-fixed-button {
+  position: fixed;
+  right: 4px;
+  bottom: 87px;
+  width: 72px;
+  z-index: 9;
+}
+@media screen and (min-width: 1024.98px) {
+  .mobile-fixed-button {
+    display: none;
+  }
+}
+.mobile-fixed-button svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .mobile-menu {
@@ -1354,6 +1388,7 @@ textarea {
   display: flex;
   gap: 4px;
   width: 100%;
+  min-height: 100%;
 }
 .mobile-menu__item {
   background: #FFFFFF;
@@ -1621,13 +1656,18 @@ textarea {
 
 .main-banner-slider {
   height: 100%;
+  border-radius: 16px;
+}
+@media screen and (max-width: 1024.98px) {
+  .main-banner-slider {
+    border-radius: 0;
+  }
 }
 
 .main-banner {
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 16px;
   overflow: hidden;
   height: 100%;
   padding: 80px 0;
@@ -1673,6 +1713,7 @@ textarea {
   }
 }
 .main-banner__tag {
+  font-family: "Montserrat";
   font-size: 18px;
   font-weight: 700;
   line-height: 1.33;
@@ -1699,9 +1740,10 @@ textarea {
   display: block;
 }
 .main-banner__title {
+  font-family: "Montserrat";
   font-size: clamp(24px, 4.5vw, 44px);
   line-height: 1.135;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color);
   max-width: 590px;
   margin-bottom: clamp(10px, 2.5vw, 24px);
@@ -1710,9 +1752,11 @@ textarea {
   color: var(--highlight);
 }
 .main-banner__subtitle {
+  font-family: "Montserrat";
   font-size: clamp(14px, 3vw, 32px);
   line-height: 1.25;
   color: var(--color);
+  font-weight: 500;
   max-width: 590px;
   margin-bottom: 24px;
 }
@@ -1721,6 +1765,7 @@ textarea {
 }
 .main-banner__btn {
   margin-top: auto;
+  font-family: "Montserrat";
 }
 
 .banner {
@@ -1759,8 +1804,8 @@ textarea {
 }
 
 .catalog {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: clamp(35px, 6vw, 60px);
+  margin-bottom: clamp(35px, 6vw, 60px);
 }
 
 .catalog-grid {
@@ -1771,7 +1816,7 @@ textarea {
 }
 @media screen and (max-width: 767.98px) {
   .catalog-grid {
-    row-gap: 34px;
+    row-gap: clamp(14px, 3vw, 34px);
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: unset;
     align-items: self-start;

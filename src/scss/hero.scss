@@ -72,6 +72,11 @@
 
 .main-banner-slider {
     height: 100%;
+    border-radius: 16px;
+
+    @media screen and (max-width: $burgerBreakpoint) {
+        border-radius: 0;
+    }
 }
 
 .main-banner {
@@ -79,7 +84,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    border-radius: 16px;
     overflow: hidden;
     height: 100%;
 
@@ -130,6 +134,7 @@
 
     // .main-banner__tag
     &__tag {
+        font-family: "Montserrat";
         font-size: 18px;
         font-weight: 700;
         line-height: 1.33;
@@ -164,9 +169,10 @@
 
     // .main-banner__title
     &__title {
+        font-family: "Montserrat";
         font-size: clamp(24px, 4.5vw, 44px);
         line-height: 1.135;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--color);
 
         max-width: 590px;
@@ -179,9 +185,11 @@
 
     // .main-banner__subtitle
     &__subtitle {
+        font-family: "Montserrat";
         font-size: clamp(14px, 3vw, 32px);
         line-height: 1.25;
         color: var(--color);
+        font-weight: 500;
 
         max-width: 590px;
         margin-bottom: 24px;
@@ -194,6 +202,7 @@
     // .main-banner__btn
     &__btn {
         margin-top: auto;
+        font-family: "Montserrat";
     }
 }
 

@@ -1,7 +1,7 @@
 function setMainTopPadding() {
     let mainPadding, bannerPadding
     if ($(window).innerWidth() > 1024) {
-        mainPadding = $(".header").outerHeight() + 20 + $(".header__row_out").outerHeight() + 45;
+        mainPadding = $(".header").outerHeight() + 20 + $(".header__row_out").outerHeight() + 20;
     } else {
         mainPadding = $(".header").outerHeight() + 35
         bannerPadding = $(".header").outerHeight() + 35

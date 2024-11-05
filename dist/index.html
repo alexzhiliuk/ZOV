@@ -11,20 +11,20 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&_v=20241031170336" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20241105180345" rel="stylesheet">
     
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20241031170336">
+    <link rel="stylesheet" href="css/style.min.css?_v=20241105180345">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241031170336"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241105180345"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241031170336"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241031170336"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241105180345"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241105180345"></script>
 
     <title>Главная</title>
 </head>
@@ -58,13 +58,13 @@
                 </a>
             </div>
             
-            <a href="#" class="header__btn" data-popup-open="1">получить консультацию</a>
+            <a href="javascript:void(0)" class="header__btn" data-popup-open="1">получить консультацию</a>
         </div>
         <div class="header__row">
             <div class="header__title">фирменный интернет-магазин мебели «ЗОВ»</div>
             <div class="header__schedule">Пн – Пт | 9:00–18:00</div>
             <a href="mailto:info.zovonline@gmail.com" class="header__mail">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: 2px;">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M20 17V7.375L12 13.5625L4 7.375V17H20ZM12 11.5L19.2727 6H4.72727L12 11.5Z" fill="white"/>
                 </svg>
                 info.zovonline@gmail.com            
@@ -684,7 +684,7 @@
                                 <a href="" class="header__droplist-link">Полуторные</a>
                             </li>
                             <li>
-                                <a href="" class="header__droplist-link">Детские до 3-х лет</a>
+                                <a href="" class="header__droplist-link">Детские до 3&#8209;х лет</a>
                             </li>
                             <li>
                                 <a href="" class="header__droplist-link">Матрасы</a>
@@ -903,7 +903,16 @@
         </div>
     </div>
 </div>
-
+<a href="javascript:void(0)" class="mobile-fixed-button" data-popup-open="1">
+    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="72" height="72" rx="36" fill="#40BFA5"/>
+        <rect x="17" y="22" width="38" height="28" rx="4" fill="white"/>
+        <path d="M24 56V50H32L24 56Z" fill="white"/>
+        <circle cx="29" cy="36" r="2" fill="#3DC2A7"/>
+        <circle cx="36" cy="36" r="2" fill="#3DC2A7"/>
+        <circle cx="43" cy="36" r="2" fill="#3DC2A7"/>
+    </svg>        
+</a>
 <div class="tapbar">
     <a href="#" class="tapbar__item">
         <div class="tapbar__icon">
@@ -969,25 +978,6 @@ function navigationResize() {
         $(".header__inner").removeClass("header__inner_scrolled")
     }
 
-    });
-</script>
-<script>
-    $("#additional-menu-open").click(function() {
-        $(".additional-menu__inner").addClass("additional-menu__inner_open")
-    })
-    $("#additional-menu-close").click(function() {
-        $(".additional-menu__inner").removeClass("additional-menu__inner_open")
-    })
-    $(window).click(function() {
-        $(".additional-menu__inner").removeClass("additional-menu__inner_open")
-    });
-    $(document).keyup(function(e) {
-        if (e.key === "Escape") { 
-            $(".additional-menu__inner").removeClass("additional-menu__inner_open")
-        }
-    });
-    $('#additional-menu-open, #additional-menu-close, .additional-menu').click(function(event){
-        event.stopPropagation();
     });
 </script>
 <script>
@@ -1422,6 +1412,6 @@ function navigationResize() {
 </script>
         </main>
 
-        <script src="js/app.min.js?_v=20241031170336"></script>
+        <script src="js/app.min.js?_v=20241105180345"></script>
     </body>
 </html>
