@@ -326,6 +326,8 @@
         border: none;
         height: 1px;
         background: #CCCBCA;
+        margin-top: -15px;
+        margin-bottom: -25px;
 
         @media screen and (max-width: $burgerBreakpoint) {
             display: none;

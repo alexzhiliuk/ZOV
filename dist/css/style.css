@@ -2292,6 +2292,8 @@ textarea {
   border: none;
   height: 1px;
   background: #CCCBCA;
+  margin-top: -15px;
+  margin-bottom: -25px;
 }
 @media screen and (max-width: 1024.98px) {
   .cart hr, .cart-footer hr {
