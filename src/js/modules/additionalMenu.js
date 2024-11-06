@@ -3,7 +3,15 @@ function moveAdditionalMenu() {
         $(".additional-menu__inner").css("left", '')
         return
     }
-    let left = $(".container_wide").offset().left - $("#additional-menu-open").offset().left + 20;
+    let containerWide = 1920,
+        containerOffsetLeft = ($(window).innerWidth() - containerWide) / 2;
+
+    console.log(containerOffsetLeft)
+
+    if (containerOffsetLeft < 20) { containerOffsetLeft = 0 }
+
+    let left = containerOffsetLeft - $("#additional-menu-open").offset().left + 20;
+
     $(".additional-menu__inner").css("left", `${left}px`)
 }
 moveAdditionalMenu()

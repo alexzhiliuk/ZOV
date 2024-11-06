@@ -1177,7 +1177,7 @@ textarea {
   min-width: 355px;
   position: absolute;
   z-index: 9;
-  top: -12px;
+  top: 0;
   left: -20px;
   background: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
