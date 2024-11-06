@@ -1785,6 +1785,7 @@ textarea {
   font-size: clamp(13px, 2vw, 22px);
   line-height: 1.25;
   font-weight: 600;
+  font-family: "Montserrat";
 }
 .banner__title span {
   color: var(--highlight);
