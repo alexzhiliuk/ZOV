@@ -847,7 +847,7 @@ textarea {
 }
 .header__row_out {
   position: absolute;
-  top: 123px;
+  top: 131px;
   left: 50%;
   translate: -50%;
   color: #1A1A1A;
@@ -1768,7 +1768,6 @@ textarea {
 }
 .main-banner__btn {
   margin-top: auto;
-  font-family: "Montserrat";
 }
 
 .banner {
@@ -1785,7 +1784,7 @@ textarea {
   color: var(--color);
   font-size: clamp(13px, 2vw, 22px);
   line-height: 1.25;
-  font-weight: 700;
+  font-weight: 600;
 }
 .banner__title span {
   color: var(--highlight);

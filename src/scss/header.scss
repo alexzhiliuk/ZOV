@@ -60,7 +60,7 @@
         // .header__row_out
         &_out {
             position: absolute;
-            top: calc(-40px + $headerHeight + 8px);
+            top: calc(-40px + $headerHeight + 16px);
             left: 50%;
             translate: -50%;
             color: #1A1A1A;
