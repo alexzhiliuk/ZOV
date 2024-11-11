@@ -11,20 +11,20 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20241105180345" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20241111190355" rel="stylesheet">
     
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20241105180345">
+    <link rel="stylesheet" href="css/style.min.css?_v=20241111190355">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241105180345"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241111190355"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241105180345"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241105180345"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241111190355"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241111190355"></script>
 
     <title>Корзина</title>
 </head>
@@ -1087,8 +1087,41 @@ function navigationResize() {
     </form>
 </section>
 
+<section class="popup" data-popup="2" style="display: none;">
+    <form class="popup__inner">
+        <div class="popup__close">
+            <img src="img/popup/close.svg" alt="">
+        </div>
+        <h2 class="popup__title popup__title_left">Регистрация</h2>
+        <div class="popup__inputs">
+            <input class="popup__input input" type="text" placeholder="Имя и фамилия*" required>
+            <input class="popup__input input" type="email" placeholder="Ваш E-mail*" required>
+            <input class="popup__input input" type="tel" placeholder="Номер телефона с кодом*" required>
+            <label class="popup__confirm confirm-checkbox">
+                <input type="checkbox">
+                Создать аккаунт и присоединиться к ZOV Online, чтобы получать персональные предложения и скидки.
+            </label>
+        </div>
+        <button type="submit" class="btn btn_green popup__btn">зарегистрироваться</button>
+    </form>
+</section>
+
+<section class="popup" data-popup="3" style="display: none;">
+    <form class="popup__inner">
+        <div class="popup__close">
+            <img src="img/popup/close.svg" alt="">
+        </div>
+        <h2 class="popup__title popup__title_left">войдите в аккаунт</h2>
+        <div class="popup__inputs">
+            <input class="popup__input input" type="email" placeholder="Ваш E-mail*" required>
+            <input class="popup__input input" type="password" placeholder="Пароль" required>
+        </div>
+        <button type="submit" class="btn btn_black popup__btn">войти в аккаунт</button>
+    </form>
+</section>
+
         <main>            
-            <section class="breadcrumbs container">
+            <section class="breadcrumbs breadcrumbs_desc container">
     <a href="index.html" class="breadcrumbs__item">Главная</a>
     /
     <a href="javascript:void(0)" class="breadcrumbs__item">Корзина</a>
@@ -1099,14 +1132,23 @@ function navigationResize() {
         <div class="products-count">4 товара</div>
     </div>
     <div class="cart-section__order">
-        <h1 class="tile cart-section__title" id="order-block-title">оформление заказа</h1>
-        <div class="hint hint_row" data-hint-object="order-block-title">
+        <h1 class="tile cart-section__title">
+            <span id="order-block-title" style="display: inline-block; padding-right: 20px;">оформление заказа</span>
+        </h1>
+        <div class="hint hint_desc hint_row" data-hint-object="order-block-title">
             <img src="img/hint/img.png" alt="" class="hint__img">
             <img src="img/hint/close.svg" alt="" class="hint__close">
             <div class="hint__text">
-                <p>Не устраивает цена доставки?</p>
                 <p>
                     Менеджер интернет-магазина свяжется с вами в<span> самое ближайшее рабочее время</span> для подтверждения заказа.
+                </p>
+            </div>
+        </div>
+        <div class="hint hint_row_info">
+            <img src="img/hint/hint.svg" alt="" class="hint__icon">
+            <div class="hint__text">
+                <p>
+                    <a href="javascript:void(0)" data-popup-open="2">Зарегистрируйтесь</a> или <a href="javascript:void(0)" data-popup-open="3">войдите в аккаунт</a>. Вы не потеряете избранные товары и товары, добавленные в корзину 
                 </p>
             </div>
         </div>
@@ -1120,21 +1162,13 @@ function navigationResize() {
                     <input type="text" class="input" placeholder="Имя и фамилия *" required>
                     <input type="email" class="input" placeholder="Ваш E-mail *" required>
                     <div class="tel-input">
-                        <div class="tels-toggle">
+                        <div class="tels-toggle" data-flag-src="img/tel/Icons/Property 1=RU.png" data-tel="rus">
                             <div class="tels-toggle__active">
-                                <img src="img/tel/Icons/Property 1=BEL.png" alt="">
+                                <img id="tels-toggle-img" src="img/tel/Icons/Property 1=BEL.png" alt="">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7 0L10 5H4L7 0Z" fill="#818181"/>
                                     <path d="M7 14L4 9L10 9L7 14Z" fill="#818181"/>
                                 </svg>                                    
-                            </div>
-                            <div class="tels-toggle-list">
-                                <div class="tels-toggle-list__item" data-tel-country="bel">
-                                    <img src="img/tel/Icons/Property 1=BEL.png" alt="">
-                                </div>
-                                <div class="tels-toggle-list__item" data-tel-country="rus">
-                                    <img src="img/tel/Icons/Property 1=RU.png" alt="">
-                                </div>
                             </div>
                         </div>
                         <input type="tel" class="input" placeholder="+375 (**) *** ** **" required data-tel-country="bel" data-tel-by-input>
@@ -1151,7 +1185,7 @@ function navigationResize() {
                 <h2 class="order-form__title">Выберите способ доставки</h2>
                 <div class="order-form__inputs">
                     <label class="radio" id="courier-radio">
-                        <input type="radio" name="delivery" value="1" checked data-check-toggle="courier-form">
+                        <input type="radio" name="delivery" value="1" checked data-check-toggle="courier-form" data-check-any-toggle="delivery-price-hint">
                         <p>Курьерской службой по Беларуси</p>
                     </label>
                     <label class="radio">
@@ -1175,7 +1209,7 @@ function navigationResize() {
                         <div class="calc-field__value">20 BYN</div>
                     </div>
                 </div>
-                <div class="hint" data-hint-object="courier-radio">
+                <div class="hint" data-hint-object="courier-radio" id="delivery-price-hint">
                     <img src="img/hint/hint.svg" alt="" class="hint__icon">
                     <img src="img/hint/close.svg" alt="" class="hint__close">
                     <div class="hint__text">
@@ -1192,7 +1226,7 @@ function navigationResize() {
                     <div class="order-form__tab" data-form-tab-id="2">Оплатить заказ после связи с менеджером</div>
                 </div>
                 <div class="order-form__body" data-form-body-id="1" style="display: none;">
-                    <div class="order-form__inputs">
+                    <div class="order-form__inputs order-form__inputs_w_100">
                         <label class="radio">
                             <input type="radio" name="payment-type" value="1" checked>
                             Онлайн-оплата банковской картой (система WEBPAY)
@@ -1202,8 +1236,8 @@ function navigationResize() {
                             Система «Расчет» (ЕРИП)
                         </label>
                         <label class="radio">
-                            <input type="radio" name="payment-type" value="3">
-                            <strong style="color: #339984;">Кредит «На родныя тавары» под 4% годовых</strong>
+                            <input type="radio" name="payment-type" value="3" data-check-any-toggle="hint-payment-type">
+                            <strong style="color: #339984; display: inline-block; padding-right: 20px;" id="credit-4-desktop">Кредит «На родныя тавары» под 4% годовых</strong>
                         </label>
                         <label class="radio">
                             <input type="radio" name="payment-type" value="4" data-check-toggle="installment">
@@ -1213,6 +1247,17 @@ function navigationResize() {
                             <input type="radio" name="payment-type" value="5" data-check-toggle="for-company">
                             Оплата по банковским реквизитам (для юридических лиц / ИП)
                         </label>
+                    </div>
+                    <div class="hint hint_row" data-hint-object="credit-4-desktop" id="hint-payment-type">
+                        <img src="img/hint/img2.png" alt="" class="hint__img">
+                        <img src="img/hint/close.svg" alt="" class="hint__close">
+                        <div class="hint__text">
+                            <p>
+                                Менеджер интернет-магазина
+                                свяжется с вами для уточнения
+                                данных и выставления счет-фактуры.
+                            </p>
+                        </div>
                     </div>
                     <div class="radio-cards" id="installment">
                         <label class="radio-card">
@@ -1236,12 +1281,13 @@ function navigationResize() {
                         <label class="radio-card">
                             <input type="radio" name="installment-type" value="4">
                             <div class="radio-card__title">
-                                «КартаFUN» от ОАО «БПС‑Сбербанк»
+                                «Карта покупок» от ОАО «Белгазпромбанк»
                             </div>
                             <div class="radio-card__caption">
                                 2 месяца
                             </div>
                         </label>
+                        
                         <label class="radio-card">
                             <input type="radio" name="installment-type" value="5">
                             <div class="radio-card__title">
@@ -1285,12 +1331,11 @@ function navigationResize() {
                     </div>
                     <div class="order-form__inputs order-form__inputs_w_100">
                         <textarea class="input" placeholder="Комментарий к заказу"></textarea>
-                    </div>
-                    <div class="order-form__inputs">
+                    
                         <label class="confirm-checkbox">
                             <input type="checkbox">
                             <p>
-                                Я ознакомился с <a href="#"><strong>Договором публичной оферты</strong></a>, <a href="#"><strong>Политикой в отношении конфиденциальных данных</strong></a>, <a href="#"><strong>Пользовательским соглашением</strong></a> и принимаю условия.
+                                Я ознакомился с <a href="#"><strong>Договором публичной оферты</strong></a>,<br> <a href="#"><strong>Политикой в отношении конфиденциальных данных</strong></a>,<br> <a href="#"><strong>Пользовательским соглашением</strong></a> и принимаю условия.
                             </p>
                         </label>
                     </div>
@@ -1341,8 +1386,8 @@ function navigationResize() {
                         Система «Расчет» (ЕРИП)
                     </label>
                     <label class="radio">
-                        <input type="radio" name="payment-type" value="3">
-                        Кредит «На родныя тавары» под 4% годовых
+                        <input type="radio" name="payment-type" value="3" data-check-any-toggle="hint-payment-type-mobile">
+                        <strong style="color: #339984;" id="credit-4-mobile">Кредит «На родныя тавары» под 4% годовых</strong>
                     </label>
                     <label class="radio">
                         <input type="radio" name="payment-type" value="4" data-check-toggle="installment-mobile" data-check-any-toggle="when-order-payment-mobile">
@@ -1352,6 +1397,17 @@ function navigationResize() {
                         <input type="radio" name="payment-type" value="5" data-check-toggle="for-company-mobile">
                         Оплата по банковским реквизитам (для юридических лиц / ИП)
                     </label>
+                    <div class="hint hint_row" data-hint-object="credit-4-mobile" id="hint-payment-type-mobile">
+                        <img src="img/hint/img2.png" alt="" class="hint__img">
+                        <img src="img/hint/close.svg" alt="" class="hint__close">
+                        <div class="hint__text">
+                            <p>
+                                Менеджер интернет-магазина
+                                свяжется с вами для уточнения
+                                данных и выставления счет-фактуры.
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="radio-cards" id="installment-mobile">
                     <label class="radio-card">
@@ -1727,6 +1783,6 @@ function navigationResize() {
 
         </main>
 
-        <script src="js/app.min.js?_v=20241105180345"></script>
+        <script src="js/app.min.js?_v=20241111190355"></script>
     </body>
 </html>

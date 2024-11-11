@@ -2,7 +2,17 @@ $(".tels-toggle").click(function(e) {
     
     if (!$(e.target).hasClass("tels-toggle")) { return }
 
-    $(this).parents(".tel-input").find(".tels-toggle-list").addClass("tels-toggle-list_active")  
+    let currentFlagSrc = $("#tels-toggle-img").attr("src"),
+        nextFlagSrc = $(this).attr("data-flag-src"),
+        tel = $(this).attr("data-tel")
+
+
+    $("#tels-toggle-img").attr("src", nextFlagSrc)
+    $(this).attr("data-flag-src", currentFlagSrc)
+    $(this).attr("data-tel", tel == "rus" ? "bel" : "rus")
+    $(this).parents(".tel-input").find("input[type='tel']").hide()
+    console.log(`input[type='tel'][data-tel-country='${tel}']`)
+    $(this).parents(".tel-input").find(`input[type='tel'][data-tel-country='${tel}']`).show()
 
 })
 

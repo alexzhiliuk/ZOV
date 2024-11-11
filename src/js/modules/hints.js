@@ -20,6 +20,12 @@ $(".hint[data-hint-object]").each(function(i, el) {
     if ($(window).innerWidth() < 1024) { return }
     moveHint(el)
 })
+$(window).resize(function() {
+    $(".hint[data-hint-object]").each(function(i, el) {
+        if ($(window).innerWidth() < 1024) { return }
+        moveHint(el)
+    })
+})
 
 $(".hint__close").click(function() {
     $(this).parents(".hint").remove()

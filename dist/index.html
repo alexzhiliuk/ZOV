@@ -11,20 +11,20 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20241105180345" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20241111190355" rel="stylesheet">
     
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20241105180345">
+    <link rel="stylesheet" href="css/style.min.css?_v=20241111190355">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241105180345"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241111190355"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241105180345"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241105180345"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241111190355"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241111190355"></script>
 
     <title>Главная</title>
 </head>
@@ -1087,6 +1087,39 @@ function navigationResize() {
     </form>
 </section>
 
+<section class="popup" data-popup="2" style="display: none;">
+    <form class="popup__inner">
+        <div class="popup__close">
+            <img src="img/popup/close.svg" alt="">
+        </div>
+        <h2 class="popup__title popup__title_left">Регистрация</h2>
+        <div class="popup__inputs">
+            <input class="popup__input input" type="text" placeholder="Имя и фамилия*" required>
+            <input class="popup__input input" type="email" placeholder="Ваш E-mail*" required>
+            <input class="popup__input input" type="tel" placeholder="Номер телефона с кодом*" required>
+            <label class="popup__confirm confirm-checkbox">
+                <input type="checkbox">
+                Создать аккаунт и присоединиться к ZOV Online, чтобы получать персональные предложения и скидки.
+            </label>
+        </div>
+        <button type="submit" class="btn btn_green popup__btn">зарегистрироваться</button>
+    </form>
+</section>
+
+<section class="popup" data-popup="3" style="display: none;">
+    <form class="popup__inner">
+        <div class="popup__close">
+            <img src="img/popup/close.svg" alt="">
+        </div>
+        <h2 class="popup__title popup__title_left">войдите в аккаунт</h2>
+        <div class="popup__inputs">
+            <input class="popup__input input" type="email" placeholder="Ваш E-mail*" required>
+            <input class="popup__input input" type="password" placeholder="Пароль" required>
+        </div>
+        <button type="submit" class="btn btn_black popup__btn">войти в аккаунт</button>
+    </form>
+</section>
+
         <main>            
             <section class="hero container container_wide">
     <div class="hero__main-banner">
@@ -1412,6 +1445,6 @@ function navigationResize() {
 </script>
         </main>
 
-        <script src="js/app.min.js?_v=20241105180345"></script>
+        <script src="js/app.min.js?_v=20241111190355"></script>
     </body>
 </html>

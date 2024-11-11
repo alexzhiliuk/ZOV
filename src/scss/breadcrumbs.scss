@@ -13,6 +13,12 @@
 
     margin-bottom: clamp(20px, 4vw, 40px);
 
+    &_desc {
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: none;
+        }
+    }
+
     // .breadcrumbs__item
     &__item {
         &:last-of-type {

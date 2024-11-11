@@ -490,7 +490,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background: #F4F2F1;
-  padding-bottom: 100px;
+  padding-bottom: 10px;
 }
 
 main {
@@ -1987,6 +1987,10 @@ textarea {
   font-weight: 400;
   text-transform: uppercase;
 }
+.popup__title_left {
+  text-align: left;
+  align-self: flex-start;
+}
 .popup__inputs {
   margin-top: clamp(24px, 4vw, 40px);
   max-width: 600px;
@@ -2004,6 +2008,8 @@ textarea {
 .popup__btn {
   margin-top: clamp(24px, 4vw, 40px);
   max-width: fit-content;
+  font-size: 16px;
+  font-weight: 500;
 }
 @media screen and (max-width: 575.98px) {
   .popup__btn {
@@ -2023,6 +2029,11 @@ textarea {
   row-gap: 0.5em;
   flex-wrap: wrap;
   margin-bottom: clamp(20px, 4vw, 40px);
+}
+@media screen and (max-width: 1024.98px) {
+  .breadcrumbs_desc {
+    display: none;
+  }
 }
 .breadcrumbs__item:last-of-type {
   opacity: 0.5;
@@ -2108,7 +2119,7 @@ textarea {
 .tile {
   border-radius: 8px;
   background: #FFFFFF;
-  padding: clamp(20px, 4vw, 44px);
+  padding: clamp(32px, 4vw, 44px) clamp(20px, 4vw, 44px);
 }
 @media screen and (max-width: 1024.98px) {
   .tile {
@@ -2362,9 +2373,6 @@ textarea {
 .cart-product__title {
   margin-top: 2px;
 }
-.cart-product__desc {
-  font-weight: 300;
-}
 .cart-product__price {
   text-align: right;
 }
@@ -2425,7 +2433,7 @@ textarea {
 .counter {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 }
 .counter__minus, .counter__plus {
   display: flex;
@@ -2442,6 +2450,7 @@ textarea {
 }
 .counter__value {
   text-align: center;
+  max-width: fit-content;
 }
 .counter__value[type=number] {
   -webkit-appearance: textfield;
@@ -2553,7 +2562,8 @@ textarea {
   gap: 12px;
   background: #43C0A6;
   border-radius: 8px;
-  padding: 16px;
+  padding: 16px 32px 16px 16px;
+  max-width: max(433px, 100%);
 }
 .hint_gray {
   background: #9C9792;
@@ -2562,6 +2572,21 @@ textarea {
   flex-direction: row;
   align-items: center;
 }
+.hint_row_info {
+  flex-direction: row;
+  align-items: center;
+}
+.hint_row_info a {
+  text-decoration: underline;
+}
+.hint_row_info .hint__icon {
+  width: 24px;
+}
+@media screen and (max-width: 1024.98px) {
+  .hint_desc {
+    display: none;
+  }
+}
 @media screen and (min-width: 1024.98px) {
   .hint::before {
     content: "\a";
@@ -2569,8 +2594,8 @@ textarea {
     border-width: 12px 16px 12px 0;
     border-color: transparent #43C0A6 transparent transparent;
     position: absolute;
-    left: 0;
-    top: 40px;
+    left: 1px;
+    top: 35px;
     translate: -100%;
   }
 }
@@ -2635,6 +2660,7 @@ textarea {
   width: 32px;
   height: auto;
   display: block;
+  user-select: none;
 }
 .tels-toggle-list {
   display: none;

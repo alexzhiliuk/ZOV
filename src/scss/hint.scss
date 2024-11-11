@@ -10,7 +10,8 @@
 
     background: #43C0A6;
     border-radius: 8px;
-    padding: 16px;
+    padding: 16px 32px 16px 16px;
+    max-width: max(433px, 100%);
 
     &_gray {
         background: #9C9792;
@@ -19,6 +20,25 @@
     &_row {
         flex-direction: row;
         align-items: center;
+
+        &_info {
+            flex-direction: row;
+            align-items: center;
+
+            a {
+                text-decoration: underline;
+            }
+
+            .hint__icon {
+                width: 24px;
+            }
+        }
+    }
+
+    &_desc {
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: none;
+        }
     }
 
     @media screen and (min-width: $burgerBreakpoint) {
@@ -28,8 +48,8 @@
             border-width: 12px 16px 12px 0;
             border-color: transparent #43C0A6 transparent transparent;
             position: absolute;
-            left: 0;
-            top: 40px;
+            left: 1px;
+            top: 35px;
             translate: -100%;
         }   
     }

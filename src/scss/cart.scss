@@ -91,7 +91,7 @@
 .tile {
     border-radius: 8px;
     background: $colorWhite;
-    padding: clamp(20px, 4vw, 44px);
+    padding: clamp(32px, 4vw, 44px) clamp(20px, 4vw, 44px);
 
     @media screen and (max-width: $breakpoint1024) {
         border-radius: 0;
@@ -407,7 +407,7 @@
 
     // .cart-product__desc
     &__desc {
-        font-weight: 300;
+        // font-weight: 300;
     }
 
     // .cart-product__price
@@ -488,7 +488,7 @@
 
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
 
     // .counter__minus
     &__minus, &__plus {
@@ -509,6 +509,7 @@
     // .counter__value
     &__value {
         text-align: center;
+        max-width: fit-content;
 
         &[type="number"] {
             -webkit-appearance: textfield;
