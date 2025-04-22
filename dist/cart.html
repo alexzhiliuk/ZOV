@@ -11,26 +11,26 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20241111190355" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20250422145028" rel="stylesheet">
     
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20241111190355">
+    <link rel="stylesheet" href="css/style.min.css?_v=20250422145028">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20241111190355"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20250422145028"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20241111190355"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20241111190355"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20250422145028"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20250422145028"></script>
 
     <title>Корзина</title>
 </head>
     <body>
 
-        <header class="header">
+        <header class="header header_main">
     <div class="header__inner container">
         <div class="header__row">
             <div class="header__burger">
@@ -969,14 +969,50 @@ function navigationResize() {
 }
 </script>
 <script>
+    var lastScroll = 0,
+        header = $("header");
+
+    if (header.hasClass("header_main")) {
+        $(".header__inner").addClass("header__inner_l")
+    } else {
+        $(".header__inner").addClass("header__inner_m")
+    }
+
     $(window).scroll(function(event){
 
     var st = $(this).scrollTop();
-    if (st > 10){
-        $(".header__inner").addClass("header__inner_scrolled")
-    } else {
-        $(".header__inner").removeClass("header__inner_scrolled")
+    
+    if (st < lastScroll) {
+        if (header.hasClass("header_main")) {
+            if (st < 10) {
+                $(".header__inner").removeClass("header__inner_m")
+            }
+        }
+
+        $(".header__inner").removeClass("header__inner_s")
+        header.removeClass("header_s")
+        
+        
+        lastScroll = st
+        return
     }
+
+    lastScroll = st
+    
+    if (header.hasClass("header_main")) {
+        if (st > 10){
+            $(".header__inner").addClass("header__inner_m")
+        }
+    } 
+    if (st > 200){
+        header.addClass("header_s")
+        $(".header__inner").addClass("header__inner_s")
+    } else {
+        header.removeClass("header_s")
+        $(".header__inner").removeClass("header__inner_s").css("transition", "")
+    }
+
+
 
     });
 </script>
@@ -1783,6 +1819,6 @@ function navigationResize() {
 
         </main>
 
-        <script src="js/app.min.js?_v=20241111190355"></script>
+        <script src="js/app.min.js?_v=20250422145028"></script>
     </body>
 </html>

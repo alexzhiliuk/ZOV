@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header header_main">
     <div class="header__inner container">
         <div class="header__row">
             <div class="header__burger">
@@ -937,14 +937,50 @@ function navigationResize() {
 }
 </script>
 <script>
+    var lastScroll = 0,
+        header = $("header");
+
+    if (header.hasClass("header_main")) {
+        $(".header__inner").addClass("header__inner_l")
+    } else {
+        $(".header__inner").addClass("header__inner_m")
+    }
+
     $(window).scroll(function(event){
 
     var st = $(this).scrollTop();
-    if (st > 10){
-        $(".header__inner").addClass("header__inner_scrolled")
-    } else {
-        $(".header__inner").removeClass("header__inner_scrolled")
+    
+    if (st < lastScroll) {
+        if (header.hasClass("header_main")) {
+            if (st < 10) {
+                $(".header__inner").removeClass("header__inner_m")
+            }
+        }
+
+        $(".header__inner").removeClass("header__inner_s")
+        header.removeClass("header_s")
+        
+        
+        lastScroll = st
+        return
     }
+
+    lastScroll = st
+    
+    if (header.hasClass("header_main")) {
+        if (st > 10){
+            $(".header__inner").addClass("header__inner_m")
+        }
+    } 
+    if (st > 200){
+        header.addClass("header_s")
+        $(".header__inner").addClass("header__inner_s")
+    } else {
+        header.removeClass("header_s")
+        $(".header__inner").removeClass("header__inner_s").css("transition", "")
+    }
+
+
 
     });
 </script>
